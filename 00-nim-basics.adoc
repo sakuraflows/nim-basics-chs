@@ -22,25 +22,29 @@ The tutorial is available both https://narimiran.github.io/nim-basics/[online] a
 
 This is a work-in-progress: if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the https://github.com/narimiran/nim-basics/issues[issue tracker].
 
-
-
+Nim 是一门相对较新的编程语言，它能让用户编写出既易于阅读又高性能的代码。但如果你正在阅读这篇 Nim 教程，很可能你已经对 Nim 有所了解。
+本教程提供在线阅读和 epub 格式的电子书版本。
+这是一个进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format]报告。
 
 == Who is this for?
-
+== 本教程适合谁
 * People with no or minimal previous programming experience
+没有或仅有少量编程经验的人士
 * People with some programming experience in other programming languages
+有其他编程语言基础的人士
 * People who want to explore Nim for the first time, starting from scratch
-
+想要从零开始首次探索 Nim 语言的人们
 
 == Who is this _not_ for?
-
+这不适合谁？
 * People with lots of programming experience: other, more advanced, tutorials might suit you better.
   See https://nim-lang.org/docs/tut1.html[Official Tutorial] or https://nim-by-example.github.io/[Nim by Example].
+  拥有丰富编程经验的人士：其他更高级的教程可能更适合您。可参阅 https://nim-lang.org/docs/tut1.html[Official Tutorial]或https://nim-by-example.github.io/[Nim by Example]。
 * People experienced in Nim (feel free to help make this tutorial better)
-
+  已掌握 Nim 语言的人士（欢迎协助完善本教程）
 
 == How to use this tutorial?
-
+如何使用本教程？
 The aim of this tutorial is to give you the basics of programming and the Nim syntax so you can have an easier time following other tutorials and/or explore further by yourself.
 
 Instead of just reading what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
@@ -48,6 +52,8 @@ The exercises at the end of some chapters should be non-negotiable -- don't skip
 
 If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the https://forum.nim-lang.org/[Nim forum], the https://gitter.im/nim-lang/Nim[Nim Gitter channel], their https://discordapp.com/invite/ezDFDw2[Discord server], or Nim's IRC channel on freenode, #nim.
 
+== 译者注
+本页面的所有内容均为机翻，如有勘误及补充，欢迎在https://github.com/sakuraflows/nim-basics-chs/issues提出！
 
 include::01-installation.adoc[]
 
