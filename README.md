@@ -1,26 +1,13 @@
-# Nim basics
+## forked from narimiran/nim-basics
+## nim-basics-chs
+自用中文版nim-basics机翻文档
 
-These are the source files for [Nim basics](https://narimiran.github.io/nim-basics/) tutorial.
-
-
-
-## Contributing
-
-Please report any errors to the [issue tracker](https://github.com/narimiran/nim-basics/issues).
-
-Pull requests are welcome, but before making (significant) changes, please open an issue so it can be discussed what is the best way to tackle the specific problem.
-
-After making the changes, make sure to build new web and epub versions:
-```bash
-make
-```
-
-If you just want to see the changes, while working on a significant refactoring, you can just build web version, as it is much faster:
-```bash
-make web
-```
+翻译模型：深度求索 DeepSeek-V3-0324
 
 
-## License
+原文档项目地址及网站
+[narimiran/nim-basics]()
+[Nim basics](https://narimiran.github.io/nim-basics/) tutorial.
 
+### license
 [MIT License](LICENSE.txt)
