@@ -6,7 +6,8 @@
 
 
 原文档项目地址及网站
-[narimiran/nim-basics]()
+[narimiran/nim-basics](https://github.com/narimiran/nim-basics)
+
 [Nim basics](https://narimiran.github.io/nim-basics/) tutorial.
 
 ### license
