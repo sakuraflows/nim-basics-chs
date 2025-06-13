@@ -4,7 +4,7 @@
 
 == 安装 Nim
 
-Nim 为三大主流操作系统提供了现成的发行版，安装 Nim 时有多种选择方案。
+Nim为三大主流操作系统提供了现成的发行版，安装 Nim 时有多种选择方案。
 
 您可以按照  https://nim-lang.org/install.html[官方安装流程] 来安装最新的稳定版本，或者使用名为 https://github.com/nim-lang/choosenim[choosenim] 的工具——如果您对最新功能和修复感兴趣，它能帮助您轻松切换稳定版和开发版。
 
@@ -21,7 +21,7 @@ Nim 为三大主流操作系统提供了现成的发行版，安装 Nim 时有�
 
 == 安装其他工具
 
-你可以在任何文本编辑器中编写 Nim 代码，然后通过终端进行编译和运行。如果需要语法高亮和代码补全功能，主流代码编辑器都有提供这些特性的插件。
+你可以在任何文本编辑器中编写Nim代码，然后通过终端进行编译和运行。如果需要语法高亮和代码补全功能，主流代码编辑器都有提供这些特性的插件。
 
 大多数 Nim 用户偏好使用  https://code.visualstudio.com/[VS Code] ,搭配 https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang[Nim extension] 扩展插件实现语法高亮与代码补全，并安装 https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] 扩展以实现快速编译运行。
 
@@ -46,7 +46,7 @@ In a new text file called e.g. `helloworld.nim` we need to write just one line o
 include::code/helloworld.nim[]
 ----
 
-NOTE: 要打印的短语必须跟在 echo 命令之后，并且必须用双引号（ `"` ）括起来。
+NOTE: 要打印的短语必须跟在 `echo` 命令之后，并且必须用双引号（ `"` ）括起来。
 
 首先我们需要编译程序，然后运行它看看是否按预期工作。
 
@@ -79,7 +79,7 @@ NOTE: `c` 告诉 Nim 编译该文件，而 `-r` 则指示它立即运行该文�
 Hello World!
 ----
 
-恭喜，你已经成功运行了你的第一个 Nim 程序！
+恭喜，你已经成功运行了你的第一个Nim程序！
 
 现在你已经学会了如何在屏幕上显示内容（使用 `echo` 命令）、编译程序（在终端输入 `nim c programName.nim` ）以及运行程序（有多种方式）。
 

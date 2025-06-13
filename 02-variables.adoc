@@ -17,12 +17,12 @@ We would say that the type of this variable is a word.
 
 
 
-== Variable declaration
+== 变量声明(Variable declaration)
 
 
 Nim 是一种静态类型( https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] )编程语言，这意味着在使用值之前需要声明其赋值类型。（译者注：其实nim也可以自动推理，有的情况下无需声明。）
 
-在 Nim 中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。
+在Nim中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。
 
 我们可以使用 `var` 关键字声明一个变量（即可变赋值），只需通过以下语法指定其名称和类型（值可以稍后添加）：
 [source]
@@ -64,13 +64,13 @@ var b = 7   # <2>
 名称中不能使用空格，因为这会将其分割成两部分。
 因此，如果你选择的名称由多个单词组成，通常的做法是使用 `camelCase` 风格书写（注意名称的首字母应为小写）。
 
-但请注意，Nim 对大小写和下划线不敏感，这意味着 `helloWorld` 和 `hello_world` 会被视为相同的名称。
+但请注意，Nim对大小写和下划线不敏感，这意味着 `helloWorld` 和 `hello_world` 会被视为相同的名称。
 唯一的例外是首字符，它对大小写敏感。
 名称中还可以包含数字和其他 UTF-8 字符，甚至可以使用表情符号（如果你愿意的话），但请记住，你和其他人可能需要输入这些字符。
 
 {nbsp}
 
-无需为每个变量单独输入` var `，可以在同一个` var `块中声明多个变量（类型不必相同）。
+无需为每个变量单独输入 `var`，可以在同一个 `var` 块中声明多个变量（类型不必相同）。
 在 Nim 中，块是指具有相同缩进（首字符前空格数相同）的代码部分，默认缩进级别为两个空格。
 在 Nim 程序中，此类块随处可见，不仅用于命名赋值。
 
@@ -100,23 +100,22 @@ f = "Hello" # error <3><4>
 ----
 <1> 变量 `f` 的初始值为 `7` ，其类型被推断为 `int` 。
 <2> 首先将 `f` 的值更改为 `-3` ，然后再改为 `19` 。这两个值都是整数，与原值类型相同。
-<3> Trying to change the value of `f` to `"Hello"` produces an error because `Hello` is not a number, and this would change the type of `f` from an integer to a string.
-<4> `# error` is a comment. Comments in Nim code are written after a `#` character. Everything after it on the same line will be ignored.
+<3> 尝试将 `f` 的值更改为 "Hello" 时会产生错误，因为 `Hello` 不是数字，这将导致 `f` 的类型从整数变为字符串。
+<4> `# error` 是注释。Nim代码中的注释写在 `#` 字符之后。同一行中该字符后的所有内容都会被忽略。
 
 
 
 
-== Immutable assignment
+== 不可变赋值(Immutable assignment)
 
-Unlike variables declared with `var` keyword, two more types of assignment exist in Nim, whose value cannot change, one declared with the `const` keyword, and the other declared with the `let` keyword.
+与使用 var 关键字声明的变量不同，Nim中还存在另外两种赋值类型，其值不可更改，一种是用 `const` 关键字声明的，另一种则是用 `let` 关键字声明的。
 
 
+=== 常量(Const)
 
-=== Const
+使用 `const` 关键字声明的不可变赋值，其值必须在编译时（程序运行前）已知。
 
-The value of an immutable assignment declared with `const` keyword must be known at compile time (before the program is run).
-
-For example, we can declare the acceleration of gravity as `const g = 9.81` or pi as `const pi = 3.14`, as we know their values in advance and these values will not change during the execution of our program.
+例如，我们可以将重力加速度声明为 `const g = 9.81` 或将圆周率声明为 `const pi = 3.14` ，因为我们预先知道它们的值，并且这些值在程序执行过程中不会改变。
 
 [source]
 ----
@@ -126,17 +125,17 @@ g = -27         # error <1>
 var h = -5
 const i = h + 7 # error <2>
 ----
-<1> The value of a constant cannot be changed.
-<2> Variable `h` is not evaluated at compile time (it is a variable and its value can change during the execution of a program), consequently the value of constant `i` can't be known at compile time, and this will raise an error.
+<1> 常量的值不可更改。
+<2> 变量 `h` 在编译时不会被求值（它是一个变量，其值在程序执行过程中可能改变），因此常量 `i` 的值在编译时无法确定，这将引发错误。
 
-In some programming languages it is a common practice to have the names of constants written in `ALL_CAPS`.
-Constants in Nim are written just like any other variable.
+在某些编程语言中，常量的名称通常以 `ALL_CAPS` 书写。
+而在Nim中，常量的书写方式与其他变量无异。
 
 
 
 === Let
 
-Immutable assignments declared with `let` don't need to be known at compile time, their value can be set at any time during the execution of a program, but once it is set, their value cannot change.
+使用 `let` 声明的不可变赋值不需要在编译时已知，它们的值可以在程序执行的任何时间设置，但一旦设置，它们的值就不能更改。
 
 [source]
 ----
@@ -146,10 +145,10 @@ j = -27 # error <1>
 var k = -5
 let l = k + 7   <2>
 ----
-<1> The value of an immutable cannot be changed.
-<2> In contrast to the `const` example above, this works.
+<1> 不可变对象的值不能被改变。
+<2> 与上面的 `const` 示例不同，这个可以工作。
 
-In practice, you will see/use `let` more frequently than `const`.
+在实际应用中，你会更频繁地见到或使用 `let` 而非 `const` 。
 
-While you could use `var` for everything, your default choice should be `let`.
-Use `var` only for the variables which will be modified.
+虽然你可以用 `var` 处理所有情况，但默认应选择 `let` 。
+仅对那些需要被修改的变量使用 `var` 。

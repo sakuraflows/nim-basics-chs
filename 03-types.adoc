@@ -1,29 +1,27 @@
-= Basic data types
+= 基本数据类型(Basic data types)
 
 
 
-== Integers
+== 整数 Integers
 
-As seen in the previous chapter, integers are numbers which are written without a fractional component and without a decimal point.
+如前一章所述，整数是没有小数部分且不带小数点的数字。
 
-For example: `32`, `-174`, `0`, `10_000_000` are all integers.
-Notice that we can use `_` as a thousands separator, to make larger numbers more readable (it is easier to see that we're talking about 10 million when it's written as 10_000_000 rather than as 10000000).
+例如: `32` , `-174` , `0` , `10_000_000` 都是整数。注意，我们可以使用 ` _ ` 作为千位分隔符，使较大的数字更易读（比如写成 `10_000_000` 比 `10000000` 更容易看出我们指的是1000万）。
 
-The usual mathematical operators -- addition (`+`), subtraction (`-`), multiplication (`*`), and division (`/`) -- work as one would expect.
-The first three operations always produce integers, while dividing two integers always gives a floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.
+常见的数学运算符—-—加法（ `+` ）、减法（ `-` ）、乘法（ `*` ）和除法（ `/` ）—-—其行为与预期一致。前三种运算总是产生整数结果，而两个整数相除总会得到一个浮点数（带小数点的数），即使两数能够整除也不例外。
 
-Integer division (division where the fractional part is discarded) can be achieved with the `div` operator.
-An operator `mod` is used if one is interested in the remainder (modulus) of an integer division.
-The result of these two operations is always an integer.
+
+整数除法（丢弃小数部分的除法）可以通过 `div` 运算符实现。如果对整数除法的余数（模数）感兴趣，可以使用 `mod` 运算符。
+这两个运算的结果始终是整数。
 
 [source]
 .integers.nim
 ----
 include::{source-dir}/integers.nim[]
 ----
-<1> The `echo` command will print to the screen everything that follows it separated by commas. In this case, it first prints the string ``a + b = ``, and then after it, in the same row, it prints the result of the expression `a + b`.
+<1> `echo` 命令会将紧随其后由逗号分隔的所有内容打印到屏幕上。在本例中，它首先打印字符串 `a + b =` ，然后紧接着在同一行打印表达式 `a + b` 的结果。
 
-We can compile and run the above code, and the output should be:
+我们可以编译并运行上述代码，输出结果应为:
 [source, output]
 ----
 a + b = 15
@@ -37,16 +35,17 @@ a mod b = 3
 
 
 
-== Floats
+== 浮点数 Floats
 
-Floating-point numbers, or floats for short, are an https://en.wikipedia.org/wiki/Floating-point_arithmetic[approximate representation] of real numbers.
+浮点数，简称 floats，是实数的一种 https://en.wikipedia.org/wiki/Floating-point_arithmetic[近似表示] 。
 
 For example: `2.73`, `-3.14`, `5.0`, `4e7` are floats.
 Notice that we can use scientific notation for large floats, where the number after the `e` is the exponent.
 In this example, `4e7` is a notation representing `4 * 10^7`.
+例如： `2.73` , `-3.14` , `5.0` , `4e7` 是浮点数。注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， `4e7` 是一种表示 `4*10^7` 的记法。
 
-We can also use the four basic mathematical operations between two floats.
-Operators `div` and `mod` are not defined for floats.
+
+我们也可以在两个浮点数之间使用四种基本数学运算。运算符 div 和 mod 未针对浮点数定义。
 
 [source]
 .floats.nim

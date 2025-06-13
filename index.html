@@ -28,19 +28,19 @@
 </li>
 <li><a href="#_命名值naming_values">命名值(Naming values)</a>
 <ul class="sectlevel1">
-<li><a href="#_variable_declaration">Variable declaration</a></li>
-<li><a href="#_immutable_assignment">Immutable assignment</a>
+<li><a href="#_变量声明variable_declaration">变量声明(Variable declaration)</a></li>
+<li><a href="#_不可变赋值immutable_assignment">不可变赋值(Immutable assignment)</a>
 <ul class="sectlevel2">
-<li><a href="#_const">Const</a></li>
+<li><a href="#_常量const">常量(Const)</a></li>
 <li><a href="#_let">Let</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_basic_data_types">Basic data types</a>
+<li><a href="#_基本数据类型basic_data_types">基本数据类型(Basic data types)</a>
 <ul class="sectlevel1">
-<li><a href="#_integers">Integers</a></li>
-<li><a href="#_floats">Floats</a>
+<li><a href="#_整数_integers">整数 Integers</a></li>
+<li><a href="#_浮点数_floats">浮点数 Floats</a>
 <ul class="sectlevel2">
 <li><a href="#_converting_floats_and_integers">Converting floats and integers</a></li>
 </ul>
@@ -139,7 +139,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 本教程提供在线阅读和 epub 格式的电子书版本。</p>
 </div>
 <div class="paragraph">
-<p>这是一项进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format] 报告。</p>
+<p>这是一项进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到 <a href="https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub">book in epub format</a> 报告。</p>
 </div>
 </div>
 </div>
@@ -186,7 +186,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <p>与其仅阅读文本内容，最佳方式是亲自尝试、修改示例、构思自己的例子并保持好奇心。某些章节末尾的练习不容忽视——切勿跳过。</p>
 </div>
 <div class="paragraph">
-<p>若需进一步理解教程内容或完成练习，你随时可在 <a href="https://forum.nim-lang.org/">Nim 论坛</a>、https://gitter.im/nim-lang/Nim[Nim Gitter 频道],  <a href="https://discordapp.com/invite/ezDFDw2">Discord server</a>、或  Nim&#8217;s IRC channel on freenode #nim 寻求帮助。</p>
+<p>若需进一步理解教程内容或完成练习，你随时可在 <a href="https://forum.nim-lang.org/">Nim 论坛</a>、 <a href="https://gitter.im/nim-lang/Nim">Nim Gitter 频道</a> , <a href="https://discordapp.com/invite/ezDFDw2">Discord server</a> 、或  Nim&#8217;s IRC channel on freenode #nim 寻求帮助。</p>
 </div>
 </div>
 </div>
@@ -358,13 +358,13 @@ We would say that the type of this variable is a word.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_variable_declaration">Variable declaration</h2>
+<h2 id="_变量声明variable_declaration">变量声明(Variable declaration)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Nim 是一种静态类型( <a href="https://en.wikipedia.org/wiki/Type_system#STATIC">statically typed</a> )编程语言，这意味着在使用值之前需要声明其赋值类型。（译者注：其实nim也可以自动推理，有的情况下无需声明。）</p>
 </div>
 <div class="paragraph">
-<p>在 Nim 中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。</p>
+<p>在Nim中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。</p>
 </div>
 <div class="paragraph">
 <p>我们可以使用 <code>var</code> 关键字声明一个变量（即可变赋值），只需通过以下语法指定其名称和类型（值可以稍后添加）：</p>
@@ -435,7 +435,7 @@ var b = 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 因此，如果你选择的名称由多个单词组成，通常的做法是使用 <code>camelCase</code> 风格书写（注意名称的首字母应为小写）。</p>
 </div>
 <div class="paragraph">
-<p>但请注意，Nim 对大小写和下划线不敏感，这意味着 <code>helloWorld</code> 和 <code>hello_world</code> 会被视为相同的名称。
+<p>但请注意，Nim对大小写和下划线不敏感，这意味着 <code>helloWorld</code> 和 <code>hello_world</code> 会被视为相同的名称。
 唯一的例外是首字符，它对大小写敏感。
 名称中还可以包含数字和其他 UTF-8 字符，甚至可以使用表情符号（如果你愿意的话），但请记住，你和其他人可能需要输入这些字符。</p>
 </div>
@@ -443,7 +443,7 @@ var b = 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <p>&#160;</p>
 </div>
 <div class="paragraph">
-<p>无需为每个变量单独输入` var <code>，可以在同一个</code> var `块中声明多个变量（类型不必相同）。
+<p>无需为每个变量单独输入 <code>var</code>，可以在同一个 <code>var</code> 块中声明多个变量（类型不必相同）。
 在 Nim 中，块是指具有相同缩进（首字符前空格数相同）的代码部分，默认缩进级别为两个空格。
 在 Nim 程序中，此类块随处可见，不仅用于命名赋值。</p>
 </div>
@@ -494,29 +494,29 @@ f = "Hello" # error <i class="conum" data-value="3"></i><b>(3)</b><i class="conu
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Trying to change the value of <code>f</code> to <code>"Hello"</code> produces an error because <code>Hello</code> is not a number, and this would change the type of <code>f</code> from an integer to a string.</td>
+<td>尝试将 <code>f</code> 的值更改为 "Hello" 时会产生错误，因为 <code>Hello</code> 不是数字，这将导致 <code>f</code> 的类型从整数变为字符串。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code># error</code> is a comment. Comments in Nim code are written after a <code>#</code> character. Everything after it on the same line will be ignored.</td>
+<td><code># error</code> 是注释。Nim代码中的注释写在 <code>#</code> 字符之后。同一行中该字符后的所有内容都会被忽略。</td>
 </tr>
 </table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_immutable_assignment">Immutable assignment</h2>
+<h2 id="_不可变赋值immutable_assignment">不可变赋值(Immutable assignment)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Unlike variables declared with <code>var</code> keyword, two more types of assignment exist in Nim, whose value cannot change, one declared with the <code>const</code> keyword, and the other declared with the <code>let</code> keyword.</p>
+<p>与使用 var 关键字声明的变量不同，Nim中还存在另外两种赋值类型，其值不可更改，一种是用 <code>const</code> 关键字声明的，另一种则是用 <code>let</code> 关键字声明的。</p>
 </div>
 <div class="sect2">
-<h3 id="_const">Const</h3>
+<h3 id="_常量const">常量(Const)</h3>
 <div class="paragraph">
-<p>The value of an immutable assignment declared with <code>const</code> keyword must be known at compile time (before the program is run).</p>
+<p>使用 <code>const</code> 关键字声明的不可变赋值，其值必须在编译时（程序运行前）已知。</p>
 </div>
 <div class="paragraph">
-<p>For example, we can declare the acceleration of gravity as <code>const g = 9.81</code> or pi as <code>const pi = 3.14</code>, as we know their values in advance and these values will not change during the execution of our program.</p>
+<p>例如，我们可以将重力加速度声明为 <code>const g = 9.81</code> 或将圆周率声明为 <code>const pi = 3.14</code> ，因为我们预先知道它们的值，并且这些值在程序执行过程中不会改变。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -531,23 +531,23 @@ const i = h + 7 # error <i class="conum" data-value="2"></i><b>(2)</b></code></p
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The value of a constant cannot be changed.</td>
+<td>常量的值不可更改。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Variable <code>h</code> is not evaluated at compile time (it is a variable and its value can change during the execution of a program), consequently the value of constant <code>i</code> can&#8217;t be known at compile time, and this will raise an error.</td>
+<td>变量 <code>h</code> 在编译时不会被求值（它是一个变量，其值在程序执行过程中可能改变），因此常量 <code>i</code> 的值在编译时无法确定，这将引发错误。</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>In some programming languages it is a common practice to have the names of constants written in <code>ALL_CAPS</code>.
-Constants in Nim are written just like any other variable.</p>
+<p>在某些编程语言中，常量的名称通常以 <code>ALL_CAPS</code> 书写。
+而在Nim中，常量的书写方式与其他变量无异。</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_let">Let</h3>
 <div class="paragraph">
-<p>Immutable assignments declared with <code>let</code> don&#8217;t need to be known at compile time, their value can be set at any time during the execution of a program, but once it is set, their value cannot change.</p>
+<p>使用 <code>let</code> 声明的不可变赋值不需要在编译时已知，它们的值可以在程序执行的任何时间设置，但一旦设置，它们的值就不能更改。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -562,43 +562,40 @@ let l = k + 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The value of an immutable cannot be changed.</td>
+<td>不可变对象的值不能被改变。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>In contrast to the <code>const</code> example above, this works.</td>
+<td>与上面的 <code>const</code> 示例不同，这个可以工作。</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>In practice, you will see/use <code>let</code> more frequently than <code>const</code>.</p>
+<p>在实际应用中，你会更频繁地见到或使用 <code>let</code> 而非 <code>const</code> 。</p>
 </div>
 <div class="paragraph">
-<p>While you could use <code>var</code> for everything, your default choice should be <code>let</code>.
-Use <code>var</code> only for the variables which will be modified.</p>
+<p>虽然你可以用 <code>var</code> 处理所有情况，但默认应选择 <code>let</code> 。
+仅对那些需要被修改的变量使用 <code>var</code> 。</p>
 </div>
 </div>
 </div>
 </div>
-<h1 id="_basic_data_types" class="sect0">Basic data types</h1>
+<h1 id="_基本数据类型basic_data_types" class="sect0">基本数据类型(Basic data types)</h1>
 <div class="sect1">
-<h2 id="_integers">Integers</h2>
+<h2 id="_整数_integers">整数 Integers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>As seen in the previous chapter, integers are numbers which are written without a fractional component and without a decimal point.</p>
+<p>如前一章所述，整数是没有小数部分且不带小数点的数字。</p>
 </div>
 <div class="paragraph">
-<p>For example: <code>32</code>, <code>-174</code>, <code>0</code>, <code>10_000_000</code> are all integers.
-Notice that we can use <code>_</code> as a thousands separator, to make larger numbers more readable (it is easier to see that we&#8217;re talking about 10 million when it&#8217;s written as 10_000_000 rather than as 10000000).</p>
+<p>例如: <code>32</code> , <code>-174</code> , <code>0</code> , <code>10_000_000</code> 都是整数。注意，我们可以使用 ` _ ` 作为千位分隔符，使较大的数字更易读（比如写成 <code>10_000_000</code> 比 <code>10000000</code> 更容易看出我们指的是1000万）。</p>
 </div>
 <div class="paragraph">
-<p>The usual mathematical operators&#8201;&#8212;&#8201;addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), and division (<code>/</code>)&#8201;&#8212;&#8201;work as one would expect.
-The first three operations always produce integers, while dividing two integers always gives a floating point number (a number with a decimal point) as a result, even if two numbers can be divided without a remainder.</p>
+<p>常见的数学运算符—-—加法（ <code>+</code> ）、减法（ <code>-</code> ）、乘法（ <code>*</code> ）和除法（ <code>/</code> ）—-—其行为与预期一致。前三种运算总是产生整数结果，而两个整数相除总会得到一个浮点数（带小数点的数），即使两数能够整除也不例外。</p>
 </div>
 <div class="paragraph">
-<p>Integer division (division where the fractional part is discarded) can be achieved with the <code>div</code> operator.
-An operator <code>mod</code> is used if one is interested in the remainder (modulus) of an integer division.
-The result of these two operations is always an integer.</p>
+<p>整数除法（丢弃小数部分的除法）可以通过 <code>div</code> 运算符实现。如果对整数除法的余数（模数）感兴趣，可以使用 <code>mod</code> 运算符。
+这两个运算的结果始终是整数。</p>
 </div>
 <div class="listingblock">
 <div class="title">integers.nim</div>
@@ -619,12 +616,12 @@ echo "a mod b = ", a mod b</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The <code>echo</code> command will print to the screen everything that follows it separated by commas. In this case, it first prints the string <code>a + b = </code>, and then after it, in the same row, it prints the result of the expression <code>a + b</code>.</td>
+<td><code>echo</code> 命令会将紧随其后由逗号分隔的所有内容打印到屏幕上。在本例中，它首先打印字符串 <code>a + b =</code> ，然后紧接着在同一行打印表达式 <code>a + b</code> 的结果。</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>We can compile and run the above code, and the output should be:</p>
+<p>我们可以编译并运行上述代码，输出结果应为:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -639,19 +636,19 @@ a mod b = 3</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_floats">Floats</h2>
+<h2 id="_浮点数_floats">浮点数 Floats</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Floating-point numbers, or floats for short, are an <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">approximate representation</a> of real numbers.</p>
+<p>浮点数，简称 floats，是实数的一种 <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">近似表示</a> 。</p>
 </div>
 <div class="paragraph">
 <p>For example: <code>2.73</code>, <code>-3.14</code>, <code>5.0</code>, <code>4e7</code> are floats.
 Notice that we can use scientific notation for large floats, where the number after the <code>e</code> is the exponent.
-In this example, <code>4e7</code> is a notation representing <code>4 * 10^7</code>.</p>
+In this example, <code>4e7</code> is a notation representing <code>4 * 10^7</code>.
+例如： <code>2.73</code> , <code>-3.14</code> , <code>5.0</code> , <code>4e7</code> 是浮点数。注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， <code>4e7</code> 是一种表示 <code>4*10^7</code> 的记法。</p>
 </div>
 <div class="paragraph">
-<p>We can also use the four basic mathematical operations between two floats.
-Operators <code>div</code> and <code>mod</code> are not defined for floats.</p>
+<p>我们也可以在两个浮点数之间使用四种基本数学运算。运算符 div 和 mod 未针对浮点数定义。</p>
 </div>
 <div class="listingblock">
 <div class="title">floats.nim</div>
