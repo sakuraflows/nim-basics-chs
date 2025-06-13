@@ -22,11 +22,11 @@
 <li><a href="#_安装指南">安装指南</a>
 <ul class="sectlevel1">
 <li><a href="#_安装_nim">安装 Nim</a></li>
-<li><a href="#_installing_additional_tools">Installing additional tools</a></li>
-<li><a href="#_testing_the_installation">Testing the installation</a></li>
+<li><a href="#_安装其他工具">安装其他工具</a></li>
+<li><a href="#_测试安装">测试安装</a></li>
 </ul>
 </li>
-<li><a href="#_naming_values">Naming values</a>
+<li><a href="#_命名值naming_values">命名值(Naming values)</a>
 <ul class="sectlevel1">
 <li><a href="#_variable_declaration">Variable declaration</a></li>
 <li><a href="#_immutable_assignment">Immutable assignment</a>
@@ -136,8 +136,10 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 </div>
 <div class="paragraph">
 <p><a href="https://nim-lang.org/">Nim</a> 是一门相对较新的编程语言，它能让用户编写出既易于阅读又高性能的代码。但如果你正在阅读这篇 Nim 教程，很可能你已经对 Nim 有所了解。
-本教程提供在线阅读和 epub 格式的电子书版本。
-这是一个进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format]报告。</p>
+本教程提供在线阅读和 epub 格式的电子书版本。</p>
+</div>
+<div class="paragraph">
+<p>这是一项进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format] 报告。</p>
 </div>
 </div>
 </div>
@@ -192,7 +194,7 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <h2 id="_译者注">译者注</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>本页面的所有内容均为机翻，如有勘误及补充，欢迎在https://github.com/sakuraflows/nim-basics-chs/issues[issues] 提出！</p>
+<p>本页面的所有内容均为机翻，如有勘误及补充，欢迎在 <a href="https://github.com/sakuraflows/nim-basics-chs/issues">issues</a> 提出！</p>
 </div>
 <div class="paragraph">
 <p>nim是一门正在快速迭代的新兴程序语言，因此本文档中的内容不免存在过时情况，请根据自己的实际情况按需阅读和学习。</p>
@@ -213,42 +215,43 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <p>无论选择哪种方式，只需按照对应链接中的安装说明操作，Nim 即可完成安装。我们将在后续章节中验证安装是否成功。</p>
 </div>
 <div class="paragraph">
-<p>若您使用 Linux 系统，您的发行版很可能已通过包管理器收录 Nim。
-若采用以上方式安装，请确保获取的是最新版本（可参照官网确认最新版本号），否则请通过上述两种方法之一进行安装。
-In this tutorial we will use the stable version.
-Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.x and Nim 2.x.
-在本教程中，我们将使用稳定版本。
+<p>若您使用 Linux 系统，您的发行版很可能已通过包管理器收录 Nim。</p>
+</div>
+<div class="paragraph">
+<p>若采用以上方式安装，请确保获取的是最新版本（可参照官网确认最新版本号），否则请通过上述两种方法之一进行安装。</p>
+</div>
+<div class="paragraph">
+<p>在本教程中，我们将使用稳定版本。
 最初，本教程是为 Nim 0.19（2018 年 9 月发布）编写的，它应该适用于任何更新的版本，包括 Nim 1.x 和 Nim 2.x。
 （译者注：截止到2025-06-13，nim官网展示的安装版本是2.2.4。有消息称nim3作为实验分支正在开发中）</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installing_additional_tools">Installing additional tools</h2>
+<h2 id="_安装其他工具">安装其他工具</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can write Nim code in any text editor, and then compile and run it from the terminal.
-If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.</p>
+<p>你可以在任何文本编辑器中编写 Nim 代码，然后通过终端进行编译和运行。如果需要语法高亮和代码补全功能，主流代码编辑器都有提供这些特性的插件。</p>
 </div>
 <div class="paragraph">
-<p>Most of Nim users prefer the <a href="https://code.visualstudio.com/">VS Code</a> editor, with the <a href="https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang">Nim extension</a> which provides syntax highlighting and code completion, and the <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> for quick compiling and running.</p>
+<p>大多数 Nim 用户偏好使用  <a href="https://code.visualstudio.com/">VS Code</a> ,搭配 <a href="https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang">Nim extension</a> 扩展插件实现语法高亮与代码补全，并安装 <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner">Code Runner extension</a> 扩展以实现快速编译运行。</p>
 </div>
 <div class="paragraph">
 <p>The author personally uses <a href="https://neovim.io/">NeoVim</a> editor, with <a href="https://github.com/alaviss/nim.nvim">this plugin</a> which provides additional features like syntax highlighting and code completion.</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re using other code editors, see <a href="https://github.com/nim-lang/Nim/wiki/Editor-Support">the wiki</a> for available editor support.</p>
+<p>如果您使用的是其他代码编辑器，请参阅 <a href="https://github.com/nim-lang/Nim/wiki/Editor-Support">the wiki</a> 以获取可用的编辑器支持。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_testing_the_installation">Testing the installation</h2>
+<h2 id="_测试安装">测试安装</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To check if the installation was successful, we will write a program which is traditionally used as an introductory example: <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello World</a>.</p>
+<p>为了检查安装是否成功，我们将编写一个传统上用作入门示例的程序： <a href="https://en.wikipedia.org/wiki/%22Hello,_World!%22_program">Hello World</a>.</p>
 </div>
 <div class="paragraph">
-<p>Printing (as in: displaying on the screen; not on a paper with a printer) the phrase <code>Hello World!</code> in Nim is straightforward and it doesn&#8217;t require any boilerplate code.</p>
+<p>在 Nim 中打印（即在屏幕上显示；而非通过打印机打印在纸上）短语 <code>Hello World!</code> 非常简单，且不需要任何模板代码。</p>
 </div>
 <div class="paragraph">
 <p>In a new text file called e.g. <code>helloworld.nim</code> we need to write just one line of code:</p>
@@ -266,19 +269,19 @@ If you want syntax highlighting and code completion there are plugins for popula
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The phrase you want to print must follow the <code>echo</code> command and must be enclosed in double-quotes (<code>"</code>).
+要打印的短语必须跟在 echo 命令之后，并且必须用双引号（ <code>"</code> ）括起来。
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>First we need to compile our program, and then run it to see if it works as expected.</p>
+<p>首先我们需要编译程序，然后运行它看看是否按预期工作。</p>
 </div>
 <div class="paragraph">
-<p>Open your terminal in the same directory where your file is (on Linux you can get "Open Terminal here" if you right-click the directory in your file manager, on Windows you should use Shift + right-click to get the menu option for opening the command line).</p>
+<p>在文件所在的目录中打开终端（在 Linux 系统中，右键点击文件管理器中的目录，可以选择“在此处打开终端”；在 Windows 系统中，需按住 Shift 键并右键点击，才能获取打开命令行的菜单选项）。</p>
 </div>
 <div class="paragraph">
-<p>We compile our program by typing in the terminal:</p>
+<p>我们在终端中输入以下命令来编译程序:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -286,12 +289,12 @@ The phrase you want to print must follow the <code>echo</code> command and must 
 </div>
 </div>
 <div class="paragraph">
-<p>After a successful compilation, we can run our program.
-On Linux we can run our program by typing <code>./helloworld</code> in the terminal, and on Windows we do it by typing <code>helloworld.exe</code>.</p>
+<p>编译成功后，我们就可以运行程序了。
+在Linux系统中，我们可以在终端输入`./helloworld`来运行程序，而在Windows系统上则需输入`helloworld.exe`。</p>
 </div>
 <div class="paragraph">
-<p>There is also a possibility to both compile and run the program with just one command.
-We need to type:</p>
+<p>还有一种可能，只需一个命令即可同时编译和运行程序。
+我们需要输入：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -305,17 +308,17 @@ We need to type:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<code>c</code> is telling Nim to compile the file, and <code>-r</code> is telling it to run it immediately.<br>
-To see all compiler options, type <code>nim --help</code> in your terminal.
+<code>c</code> 告诉 Nim 编译该文件，而 <code>-r</code> 则指示它立即运行该文件。
+要查看所有编译器选项，请在终端中输入 <code>nim --help</code> 。
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re using VSCode with the Code Runner extension mentioned before, you&#8217;ll just have to press <code>Ctrl+Alt+N</code> and your file will be compiled and run.</p>
+<p>如果你使用的是之前提到的带有 Code Runner 扩展的 VSCode，只需按下 <code>Ctrl+Alt+N</code> ，你的文件就会被编译并运行。</p>
 </div>
 <div class="paragraph">
-<p>Whichever way you chose to run your program, after a brief moment in the output window (or in your terminal) you should see:</p>
+<p>无论你选择哪种方式运行程序，稍等片刻后，在输出窗口（或终端）中你应该会看到：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -323,34 +326,34 @@ To see all compiler options, type <code>nim --help</code> in your terminal.
 </div>
 </div>
 <div class="paragraph">
-<p>Congratulations, you have successfully run your first Nim program!</p>
+<p>恭喜，你已经成功运行了你的第一个 Nim 程序！</p>
 </div>
 <div class="paragraph">
-<p>Now you know how to print some stuff on the screen (using the <code>echo</code> command), compile your program (typing <code>nim c programName.nim</code> in your terminal), and run it (various possibilities).</p>
+<p>现在你已经学会了如何在屏幕上显示内容（使用 <code>echo</code> 命令）、编译程序（在终端输入 <code>nim c programName.nim</code> ）以及运行程序（有多种方式）。</p>
 </div>
 <div class="paragraph">
-<p>We can now start to explore the basic elements which will help us to write simple Nim programs.</p>
+<p>现在我们可以开始探索基本元素，这些元素将帮助我们编写简单的 Nim 程序。</p>
 </div>
 </div>
 </div>
-<h1 id="_naming_values" class="sect0">Naming values</h1>
+<h1 id="_命名值naming_values" class="sect0">命名值(Naming values)</h1>
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>It is often helpful to give the values in our programs names to help us keep track of things.
-If we ask a user for his/her name, we want to store it for the later usage, without asking for it again and again every time we need to do some computation with it.</p>
+<p>在编程中，为程序中的值赋予名称通常有助于我们追踪和管理数据。
+例如，当向用户询问其姓名时，我们希望存储该姓名以便后续使用，避免每次需要进行相关计算时反复询问。</p>
 </div>
 <div class="paragraph">
-<p>In the example <code>pi = 3.14</code>, the name <code>pi</code> is connected to the value <code>3.14</code>.
-From our experience, we can tell that the type of a variable <code>pi</code> is a (decimal) number.</p>
+<p>在示例 <code>pi = 3.14</code> 中，名称 <code>pi</code> 与值 <code>3.14</code> 相关联。
+根据经验可知，变量 <code>pi</code> 的类型为（十进制）数字。</p>
 </div>
 <div class="paragraph">
 <p>Another example would be <code>firstName = Alice</code>, where <code>firstName</code> is the name of a variable with the value <code>Alice</code>.
 We would say that the type of this variable is a word.</p>
 </div>
 <div class="paragraph">
-<p>In programming languages this works similarly.
-These name assignments have their <em>name</em>, the <em>value</em>, and a <em>type</em>.</p>
+<p>编程语言中的机制与此类似。
+这些名称分配包含它们的名称(<em>name</em>)、值(<em>value</em>)和类型(<em>type</em>)三个要素。</p>
 </div>
 </div>
 </div>
@@ -358,11 +361,13 @@ These name assignments have their <em>name</em>, the <em>value</em>, and a <em>t
 <h2 id="_variable_declaration">Variable declaration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nim is a <a href="https://en.wikipedia.org/wiki/Type_system#STATIC">statically typed</a> programming language, meaning that the type of an assignment needs to be declared before using the value.</p>
+<p>Nim 是一种静态类型( <a href="https://en.wikipedia.org/wiki/Type_system#STATIC">statically typed</a> )编程语言，这意味着在使用值之前需要声明其赋值类型。（译者注：其实nim也可以自动推理，有的情况下无需声明。）</p>
 </div>
 <div class="paragraph">
-<p>In Nim we also distinguish values that can change, or mutate, from those that can&#8217;t, but more on this later.
-We can declare a variable (a mutable assignment) using the <code>var</code> keyword, just by stating its name and type (the value can be added later) by using this syntax:</p>
+<p>在 Nim 中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。</p>
+</div>
+<div class="paragraph">
+<p>我们可以使用 <code>var</code> 关键字声明一个变量（即可变赋值），只需通过以下语法指定其名称和类型（值可以稍后添加）：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -370,7 +375,7 @@ We can declare a variable (a mutable assignment) using the <code>var</code> keyw
 </div>
 </div>
 <div class="paragraph">
-<p>If we already know its value, we can declare a variable and give it a value immediately:</p>
+<p>如果我们已经知道它的值，可以立即声明一个变量并为其赋值：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -384,18 +389,18 @@ We can declare a variable (a mutable assignment) using the <code>var</code> keyw
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Angular brackets(<code>&lt;&gt;</code>) are used to show something you can change.<br>
-So <code>&lt;name&gt;</code> is not literally the word <code>name</code> in angular brackets but rather any name.
+尖括号（ <code>&lt;&gt;</code> ）用于表示可以更改的内容.<br>
+所以 <code>&lt;name&gt;</code> 并非字面意义上的尖括号内的单词 <code>name</code> ，而是指代任意名称。
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Nim also has <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
-We&#8217;ll look more into the various types in the <a href="#_basic_data_types">next chapter</a>.</p>
+<p>Nim 还具备类型推断( <a href="https://en.wikipedia.org/wiki/Type_inference">type inference</a> )能力：编译器能根据赋值自动推断变量类型，无需显式声明。
+我们将在下一章深入探讨各种类型。</p>
 </div>
 <div class="paragraph">
-<p>So we can assign a variable without an explicit type like this:</p>
+<p>因此我们可以像这样不指定显式类型来声明变量:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -403,7 +408,7 @@ We&#8217;ll look more into the various types in the <a href="#_basic_data_types"
 </div>
 </div>
 <div class="paragraph">
-<p>An example of this in Nim looks like this:</p>
+<p>在 Nim 中，一个示例如下:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -415,32 +420,32 @@ var b = 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Variable <code>a</code> is of type <code>int</code> (integer) with no value explicitly set.</td>
+<td>变量 <code>a</code> 的类型为 <code>int</code> （整数），未显式设置值。(with no value explicitly set.)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Variable <code>b</code> has a value of <code>7</code>. Its type is automatically detected as an integer.</td>
+<td>变量 <code>b</code> 的值为 <code>7</code> ，其类型被自动推断为整数。</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When assigning names it is important to choose names that mean something for your program.
-Simply naming them <code>a</code>, <code>b</code>, <code>c</code>, and so forth will quickly become confusing.
-It is not possible to use spaces in a name, as that would split it into two.
-So if the name you choose consists of more than one word the usual way is to write it in <code>camelCase</code> style (notice that the first letter in a name should be lowercase).</p>
+<p>在命名时，选择对程序有意义的名称非常重要。
+简单地命名为 <code>a</code> 、 <code>b</code> 、 <code>c</code> 等很快就会变得混乱。
+名称中不能使用空格，因为这会将其分割成两部分。
+因此，如果你选择的名称由多个单词组成，通常的做法是使用 <code>camelCase</code> 风格书写（注意名称的首字母应为小写）。</p>
 </div>
 <div class="paragraph">
-<p>Note however that Nim is both case- and underscore-insensitive meaning that <code>helloWorld</code> and <code>hello_world</code> would be the same name.
-The exception to this is the first character, which <em>is</em> case-sensitive.
-Names can also include both numbers and other UTF-8 characters, even emojis should you wish that, but keep in mind you and possibly others will have to type them.</p>
+<p>但请注意，Nim 对大小写和下划线不敏感，这意味着 <code>helloWorld</code> 和 <code>hello_world</code> 会被视为相同的名称。
+唯一的例外是首字符，它对大小写敏感。
+名称中还可以包含数字和其他 UTF-8 字符，甚至可以使用表情符号（如果你愿意的话），但请记住，你和其他人可能需要输入这些字符。</p>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
 </div>
 <div class="paragraph">
-<p>Instead of typing <code>var</code> for each variable, multiple variables (not necessarily of the same type) can be declared in the same <code>var</code> block.
-In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces.
-You will see such blocks everywhere in a Nim program, not only for assigning names.</p>
+<p>无需为每个变量单独输入` var <code>，可以在同一个</code> var `块中声明多个变量（类型不必相同）。
+在 Nim 中，块是指具有相同缩进（首字符前空格数相同）的代码部分，默认缩进级别为两个空格。
+在 Nim 程序中，此类块随处可见，不仅用于命名赋值。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -457,16 +462,16 @@ You will see such blocks everywhere in a Nim program, not only for assigning nam
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In Nim tabs are not allowed as indentation.<br>
-You can set up your code editor to convert pressing <code>Tab</code> to any number of spaces.<br>
-In VS Code, the default setting is to convert <code>Tab</code> to four spaces.
-This is easily overridden in settings (<code>Ctrl+,</code>) by setting <code>"editor.tabSize": 2</code>.
+在 Nim 中不允许使用制表符进行缩进.<br>
+你可以设置代码编辑器将按下 Tab 转换为任意数量的空格.<br>
+在 VS Code 中，默认设置是将 <code>Tab</code> 转换为四个空格。
+这可以通过在设置中（ <code>Ctrl+,</code> ）配置 <code>"editor.tabSize": 2</code> 轻松覆盖。
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>As previously mentioned variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.</p>
+<p>如前所述，变量是可变的，即:它们的值可以（多次）改变，但变量的类型必须与声明时保持一致。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -481,11 +486,11 @@ f = "Hello" # error <i class="conum" data-value="3"></i><b>(3)</b><i class="conu
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Variable <code>f</code> has an initial value of <code>7</code> and its type is inferred as <code>int</code>.</td>
+<td>变量 <code>f</code> 的初始值为 <code>7</code> ，其类型被推断为 <code>int</code> 。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>The value of <code>f</code> is first changed to <code>-3</code>, and then to <code>19</code>. Both of these are integers, the same as the original value.</td>
+<td>首先将 <code>f</code> 的值更改为 <code>-3</code> ，然后再改为 <code>19</code> 。这两个值都是整数，与原值类型相同。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>

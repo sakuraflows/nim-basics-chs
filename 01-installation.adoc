@@ -36,7 +36,7 @@ The author personally uses https://neovim.io/[NeoVim] editor, with https://githu
 
 为了检查安装是否成功，我们将编写一个传统上用作入门示例的程序： https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
 
-在 Nim 中打印（即在屏幕上显示；而非通过打印机打印在纸上）短语` Hello World! `非常简单，且不需要任何模板代码。
+在 Nim 中打印（即在屏幕上显示；而非通过打印机打印在纸上）短语 `Hello World!` 非常简单，且不需要任何模板代码。
 
 In a new text file called e.g. `helloworld.nim` we need to write just one line of code:
 
@@ -46,7 +46,7 @@ In a new text file called e.g. `helloworld.nim` we need to write just one line o
 include::code/helloworld.nim[]
 ----
 
-NOTE: 要打印的短语必须跟在 echo 命令之后，并且必须用双引号（` " `）括起来。
+NOTE: 要打印的短语必须跟在 echo 命令之后，并且必须用双引号（ `"` ）括起来。
 
 首先我们需要编译程序，然后运行它看看是否按预期工作。
 
