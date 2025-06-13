@@ -1,18 +1,18 @@
-= Naming values
+= 命名值(Naming values)
 
 
 
-It is often helpful to give the values in our programs names to help us keep track of things.
-If we ask a user for his/her name, we want to store it for the later usage, without asking for it again and again every time we need to do some computation with it.
+在编程中，为程序中的值赋予名称通常有助于我们追踪和管理数据。
+例如，当向用户询问其姓名时，我们希望存储该姓名以便后续使用，避免每次需要进行相关计算时反复询问。
 
-In the example `pi = 3.14`, the name `pi` is connected to the value `3.14`.
-From our experience, we can tell that the type of a variable `pi` is a (decimal) number.
+在示例 `pi = 3.14` 中，名称 `pi` 与值 `3.14` 相关联。
+根据经验可知，变量 `pi` 的类型为（十进制）数字。
 
 Another example would be `firstName = Alice`, where `firstName` is the name of a variable with the value `Alice`.
 We would say that the type of this variable is a word.
 
-In programming languages this works similarly.
-These name assignments have their _name_, the _value_, and a _type_.
+编程语言中的机制与此类似。
+这些名称分配包含它们的名称(_name_)、值(_value_)和类型(_type_)三个要素。
 
 
 
@@ -20,59 +20,59 @@ These name assignments have their _name_, the _value_, and a _type_.
 == Variable declaration
 
 
-Nim is a https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] programming language, meaning that the type of an assignment needs to be declared before using the value.
+Nim 是一种静态类型( https://en.wikipedia.org/wiki/Type_system#STATIC[statically typed] )编程语言，这意味着在使用值之前需要声明其赋值类型。（译者注：其实nim也可以自动推理，有的情况下无需声明。）
 
-In Nim we also distinguish values that can change, or mutate, from those that can't, but more on this later.
-We can declare a variable (a mutable assignment) using the `var` keyword, just by stating its name and type (the value can be added later) by using this syntax:
+在 Nim 中，我们还会区分可以改变或可变的值与不可变的值(mutate)，但这一点稍后再详述。
+
+我们可以使用 `var` 关键字声明一个变量（即可变赋值），只需通过以下语法指定其名称和类型（值可以稍后添加）：
 [source]
 ----
 var <name>: <type>
 ----
 
-If we already know its value, we can declare a variable and give it a value immediately:
+如果我们已经知道它的值，可以立即声明一个变量并为其赋值：
 [source]
 ----
 var <name>: <type> = <value>
 ----
-NOTE: Angular brackets(`<>`) are used to show something you can change. +
-So `<name>` is not literally the word `name` in angular brackets but rather any name.
+NOTE: 尖括号（ `<>` ）用于表示可以更改的内容. +
+所以 `<name>` 并非字面意义上的尖括号内的单词 `name` ，而是指代任意名称。
 
 
-Nim also has https://en.wikipedia.org/wiki/Type_inference[type inference] ability: the compiler can automatically detect the type of a name assignment from its value, without explicitly stating the type.
-We'll look more into the various types in the <<Basic data types, next chapter>>.
+Nim 还具备类型推断( https://en.wikipedia.org/wiki/Type_inference[type inference] )能力：编译器能根据赋值自动推断变量类型，无需显式声明。
+我们将在下一章深入探讨各种类型。
 
-So we can assign a variable without an explicit type like this:
+因此我们可以像这样不指定显式类型来声明变量:
 [source]
 ----
 var <name> = <value>
 ----
 
 
-An example of this in Nim looks like this:
+在 Nim 中，一个示例如下:
 [source]
 ----
 var a: int  # <1>
 var b = 7   # <2>
 ----
-<1> Variable `a` is of type `int` (integer) with no value explicitly set.
-<2> Variable `b` has a value of `7`. Its type is automatically detected as an integer.
+<1> 变量 `a` 的类型为 `int` （整数），未显式设置值。(with no value explicitly set.)
+<2> 变量 `b` 的值为 `7` ，其类型被自动推断为整数。
 
 
-When assigning names it is important to choose names that mean something for your program.
-Simply naming them `a`, `b`, `c`, and so forth will quickly become confusing.
-It is not possible to use spaces in a name, as that would split it into two.
-So if the name you choose consists of more than one word the usual way is to write it in `camelCase` style (notice that the first letter in a name should be lowercase).
+在命名时，选择对程序有意义的名称非常重要。
+简单地命名为 `a` 、 `b` 、 `c` 等很快就会变得混乱。
+名称中不能使用空格，因为这会将其分割成两部分。
+因此，如果你选择的名称由多个单词组成，通常的做法是使用 `camelCase` 风格书写（注意名称的首字母应为小写）。
 
-Note however that Nim is both case- and underscore-insensitive meaning that `helloWorld` and `hello_world` would be the same name.
-The exception to this is the first character, which _is_ case-sensitive.
-Names can also include both numbers and other UTF-8 characters, even emojis should you wish that, but keep in mind you and possibly others will have to type them.
-
+但请注意，Nim 对大小写和下划线不敏感，这意味着 `helloWorld` 和 `hello_world` 会被视为相同的名称。
+唯一的例外是首字符，它对大小写敏感。
+名称中还可以包含数字和其他 UTF-8 字符，甚至可以使用表情符号（如果你愿意的话），但请记住，你和其他人可能需要输入这些字符。
 
 {nbsp}
 
-Instead of typing `var` for each variable, multiple variables (not necessarily of the same type) can be declared in the same `var` block.
-In Nim, blocks are parts of code with the same indentation (same number of spaces before the first character), and the default indentation level is two spaces.
-You will see such blocks everywhere in a Nim program, not only for assigning names.
+无需为每个变量单独输入` var `，可以在同一个` var `块中声明多个变量（类型不必相同）。
+在 Nim 中，块是指具有相同缩进（首字符前空格数相同）的代码部分，默认缩进级别为两个空格。
+在 Nim 程序中，此类块随处可见，不仅用于命名赋值。
 
 [source]
 ----
@@ -82,12 +82,13 @@ var
   e = '!'
 ----
 
-NOTE: In Nim tabs are not allowed as indentation. +
-You can set up your code editor to convert pressing `Tab` to any number of spaces. +
-In VS Code, the default setting is to convert `Tab` to four spaces.
-This is easily overridden in settings (`Ctrl+,`) by setting `"editor.tabSize": 2`.
+NOTE: 在 Nim 中不允许使用制表符进行缩进. +
+你可以设置代码编辑器将按下 Tab 转换为任意数量的空格. +
+在 VS Code 中，默认设置是将 `Tab` 转换为四个空格。
+这可以通过在设置中（ `Ctrl+,` ）配置 `"editor.tabSize": 2` 轻松覆盖。
 
-As previously mentioned variables are mutable, i.e. their value can change (multiple times), but their type must stay the same as declared.
+
+如前所述，变量是可变的，即:它们的值可以（多次）改变，但变量的类型必须与声明时保持一致。
 
 [source]
 ----
@@ -97,8 +98,8 @@ f = -3              <2>
 f = 19
 f = "Hello" # error <3><4>
 ----
-<1> Variable `f` has an initial value of `7` and its type is inferred as `int`.
-<2> The value of `f` is first changed to `-3`, and then to `19`. Both of these are integers, the same as the original value.
+<1> 变量 `f` 的初始值为 `7` ，其类型被推断为 `int` 。
+<2> 首先将 `f` 的值更改为 `-3` ，然后再改为 `19` 。这两个值都是整数，与原值类型相同。
 <3> Trying to change the value of `f` to `"Hello"` produces an error because `Hello` is not a number, and this would change the type of `f` from an integer to a string.
 <4> `# error` is a comment. Comments in Nim code are written after a `#` character. Everything after it on the same line will be ignored.
 
