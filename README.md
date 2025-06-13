@@ -1,4 +1,5 @@
 ## forked from narimiran/nim-basics
+项目施工中
 ## nim-basics-chs
 自用中文版nim-basics机翻文档
 <br/>
@@ -15,11 +16,14 @@ sudo gem install asciidoctor asciidoctor-epub3    安装asciidoctor相关依赖
 
 
 构建文档
+<br/>
 `make`
 
 If you just want to see the changes, while working on a significant refactoring, you can just build web version, as it is much faster:
+<br/>
 `make web`
 <br/>
+
 
 ##### 关于可视化编辑
 你可以使用vscode + AsciiDoc扩展实现对本项目文档的便捷编辑。
