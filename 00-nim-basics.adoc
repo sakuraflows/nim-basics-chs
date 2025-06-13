@@ -26,7 +26,6 @@ https://nim-lang.org/[Nim] 是一门相对较新的编程语言，它能让用�
 本教程提供在线阅读和 epub 格式的电子书版本。
 这是一个进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format]报告。
 
-== Who is this for?
 == 本教程适合谁
 * 没有或仅有少量编程经验的人士
 * 有其他编程语言基础的人士
@@ -37,15 +36,16 @@ https://nim-lang.org/[Nim] 是一门相对较新的编程语言，它能让用�
 * 已掌握 Nim 语言的人士（欢迎协助完善本教程）
 
 == 如何使用本教程？
-The aim of this tutorial is to give you the basics of programming and the Nim syntax so you can have an easier time following other tutorials and/or explore further by yourself.
+本教程旨在向你介绍编程基础及 Nim 语法，以便你能更轻松地跟进其他教程和/或自行深入探索。
 
-Instead of just reading what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
-The exercises at the end of some chapters should be non-negotiable -- don't skip them.
+与其仅阅读文本内容，最佳方式是亲自尝试、修改示例、构思自己的例子并保持好奇心。某些章节末尾的练习不容忽视——切勿跳过。
 
-If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the https://forum.nim-lang.org/[Nim forum], the https://gitter.im/nim-lang/Nim[Nim Gitter channel], their https://discordapp.com/invite/ezDFDw2[Discord server], or Nim's IRC channel on freenode, #nim.
+若需进一步理解教程内容或完成练习，你随时可在 https://forum.nim-lang.org/[Nim 论坛]、https://gitter.im/nim-lang/Nim[Nim Gitter 频道],  https://discordapp.com/invite/ezDFDw2[Discord server]、或  Nim's IRC channel on freenode #nim 寻求帮助。
 
 == 译者注
 本页面的所有内容均为机翻，如有勘误及补充，欢迎在https://github.com/sakuraflows/nim-basics-chs/issues[issues] 提出！
+
+nim是一门正在快速迭代的新兴程序语言，因此本文档中的内容不免存在过时情况，请根据自己的实际情况按需阅读和学习。
 
 include::01-installation.adoc[]
 
