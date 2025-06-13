@@ -26,6 +26,7 @@ If you just want to see the changes, while working on a significant refactoring,
 `make web`
 <br/>
 
+## 其它注意事项
 
 ##### 关于可视化编辑
 你可以使用vscode + AsciiDoc扩展实现对本项目文档的便捷编辑。
@@ -38,6 +39,8 @@ Nim是一门正在快速迭代的新兴程序语言，因此本文档中的内�
 
 本文档的所有内容均为机翻，如您有勘误及补充，欢迎在 issues 提出！
 
+##### 关于epub view
+推荐使用calibre浏览及阅读文档构建生成的pdf文件，使用其它软件阅读可能导致乱码。本项目也将在结束施工后提供pdf文件。
 
 <br/>
 
