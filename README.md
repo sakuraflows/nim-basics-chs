@@ -19,6 +19,11 @@ sudo gem install asciidoctor asciidoctor-epub3    安装asciidoctor相关依赖
 If you just want to see the changes, while working on a significant refactoring, you can just build web version, as it is much faster:
 `make web`
 
+<br/><br/>
+
+Nim是一门正在快速迭代的新兴程序语言，因此本文档中的内容不免存在过时情况，请根据自己的实际情况按需阅读和学习。
+
+本页面的所有内容均为机翻，如有勘误及补充，欢迎在 [issues](https://github.com/sakuraflows/nim-basics-chs/issues) 提出！
 
 ### 原文档项目地址及网站
 
