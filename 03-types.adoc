@@ -60,9 +60,9 @@ c - d = 4.5
 c * d = 15.1875
 c / d = 3.0  <1>
 ----
-<1> Notice that in the addition and division examples, even though we get a number without a decimal part, the result is still of the floating type.
+<1> 请注意，在加法和除法的例子中，即使我们得到的数字没有小数部分，结果仍然是浮点类型。
 
-The precedence of mathematical operations is as one would expect: multiplication and division have higher priority than addition and subtraction.
+数学运算的优先级符合预期：乘法和除法的优先级高于加法和减法。
 
 [source]
 ----
@@ -79,9 +79,10 @@ echo 24 - 8 / 4
 
 
 
-=== Converting floats and integers
+=== 浮点数和整数的转换
 
-Mathematical operations between variables of different numerical types are not possible in Nim, and they will produce an error:
+
+在Nim中，不同数值类型的变量之间无法进行数学运算，否则会产生错误：
 [source]
 ----
 let
@@ -91,8 +92,8 @@ let
 echo e + f   # error
 ----
 
-The values of variables need to be converted to the same type.
-Conversion is straight-forward: to convert to an integer, we use the `int` function, and to convert to a float the `float` function is used.
+变量的值需要转换为同一类型。
+转换过程很简单：要转换为整数，我们使用 `int` 函数；要转换为浮点数，则使用 `float` 函数。
 [source]
 ----
 let
@@ -105,10 +106,10 @@ echo int(f)        <2>
 echo float(e) + f  <3>
 echo e + int(f)    <4>
 ----
-<1> Printing a `float` version of an integer `e`. (`e` remains of integer type)
-<2> Printing an `int` version of a float `f`.
-<3> Both operands are floats and can be added.
-<4> Both operands are integers and can be added.
+<1> 打印一个整数的 `float` 形式。（ `e` 仍为整数类型）
+<2> 打印浮点数`f`的 `int` 形式。
+<3> 两个操作数均为浮点数，可以进行加法运算。
+<4> 两个操作数都是整数，可以相加。
 
 
 [source, output]
@@ -119,20 +120,20 @@ echo e + int(f)    <4>
 28
 ----
 
-NOTE: When using the `int` function to convert a float to an integer no rounding will be performed.
-The number simply drops any decimals. +
-To perform rounding we must call another function, but for that we must know a bit more about how to use Nim.
+NOTE: 使用 `int` 函数将浮点数转换为整数时不会执行四舍五入操作，数字会直接舍弃小数部分。 +
+要进行四舍五入运算，我们必须调用另一个函数，但在此之前需要先了解一些关于如何使用 Nim 的基础知识。
 
 
 
 
-== Characters
+== 字符 Characters
 
-The `char` type is used for representing a single https://en.wikipedia.org/wiki/ASCII[ASCII] character.
+`char` 类型用于表示单个 https://en.wikipedia.org/wiki/ASCII[ASCII] 字符。
 
-Chars are written between two single ticks (`'`).
-Chars can be letters, symbols, or single digits.
-Multiple digits or multiple letters produce an error.
+
+字符写在两个单引号之间（ `'` ）。
+字符可以是字母、符号或单个数字。
+多个数字或多个字母会导致错误。
 [source]
 ----
 let
@@ -146,48 +147,48 @@ let
 
 
 
-== Strings
+== 字符串 Strings
 
-Strings can be described as a series of characters.
-Their content is written between two double quotes (`"`).
+字符串可以被描述为一系列字符。
+其内容写在两个双引号之间（ `"` ）。
 
-We might think of strings as words, but they can contain more than one word, some symbols, or digits.
+我们可能认为字符串就是单词，但它们可以包含多个单词、一些符号(译者注：可以是utf-8字符)或数字。
 
 [source]
 .strings.nim
 ----
 include::{source-dir}/strings.nim[]
 ----
-<1> An empty string.
-<2> This is not a number (int). It is inside double quotes, making it a string.
-<3> Even though this is only one character, it is not a char because it is enclosed inside of double quotes.
+<1> 一个空字符串
+<2> 这不是数字（整数）。它在双引号内，因此是一个字符串。
+<3> 尽管这只是一个字符，但它不是 char 类型，因为它被包含在双引号内。
 
 
 
 
 
-=== Special characters
+=== 特殊字符 Special characters
 
-If we try to print the following string:
+如果我们尝试打印以下字符串：
 [source]
 ----
 echo "some\nim\tips"
 ----
-the result might surprise us:
+结果可能会让我们感到惊讶：
 [source, output]
 ----
 some
 im	ips
 ----
 
-This is because there are several characters which have a special meaning.
-They are used by prepending the escape character `\` to them.
+这是因为有几个字符具有特殊含义。
+它们通过在字符前添加转义字符 `\` 来使用。
 
-* `\n` is a newline character
-* `\t` is a tab character
-* `\\` is a backslash (since one `\` is used as the escape character)
+* `\n` 是换行符
+* `\t` 是一个制表符
+* `\\` 是一个反斜杠（因为一个 `\` 被用作转义字符）
 
-If we wanted to print the above example as it was written, we have two possibilities:
+如果我们想按照原样打印上面的示例，那么有两种可能选择：
 
 * Use `\\` instead of `\` to print backslashes, or
 * Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.
