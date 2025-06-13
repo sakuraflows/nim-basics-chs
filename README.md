@@ -11,13 +11,15 @@ windows下推荐使用Linux子系统wsl2构建本文档
 依次运行如下指令（适用于Ubuntu），安装依赖
 ```
 sudo apt install make ruby-full  安装make和ruby
-sudo gem install asciidoctor asciidoctor-epub3    安装asciidoctor相关依赖
+sudo gem install asciidoctor asciidoctor-epub3 rouge   安装asciidoctor相关依赖
 ```
 
 
 构建文档
 <br/>
 `make`
+<br/>
+可用的选项：`make clean`
 
 If you just want to see the changes, while working on a significant refactoring, you can just build web version, as it is much faster:
 <br/>
