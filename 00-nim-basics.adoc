@@ -1,4 +1,4 @@
-= Nim basics
+= Nim basics 中文文档
 :source-highlighter: rouge
 :rouge-style: gruvbox
 :source-language: nim
