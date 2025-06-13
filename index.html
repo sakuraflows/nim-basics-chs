@@ -8,7 +8,6 @@
 <title>Nim basics</title>
 <link rel="stylesheet" href="./styles/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./rouge-gruvbox.css">
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
@@ -16,12 +15,13 @@
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_who_is_this_for">Who is this for?</a></li>
-<li><a href="#_who_is_this_not_for">Who is this <em>not</em> for?</a></li>
-<li><a href="#_how_to_use_this_tutorial">How to use this tutorial?</a></li>
-<li><a href="#_installation">Installation</a>
+<li><a href="#_本教程适合谁">本教程适合谁</a></li>
+<li><a href="#_这不适合谁">这不适合谁？</a></li>
+<li><a href="#_如何使用本教程">如何使用本教程？</a></li>
+<li><a href="#_译者注">译者注</a></li>
+<li><a href="#_安装指南">安装指南</a>
 <ul class="sectlevel1">
-<li><a href="#_installing_nim">Installing Nim</a></li>
+<li><a href="#_安装_nim">安装 Nim</a></li>
 <li><a href="#_installing_additional_tools">Installing additional tools</a></li>
 <li><a href="#_testing_the_installation">Testing the installation</a></li>
 </ul>
@@ -134,78 +134,92 @@ But if you are reading this Nim tutorial, the chances are that you already know 
 <div class="paragraph">
 <p>This is a work-in-progress: if you spot any errors and/or you have an idea how to make this tutorial better, please report it to the <a href="https://github.com/narimiran/nim-basics/issues">issue tracker</a>.</p>
 </div>
+<div class="paragraph">
+<p><a href="https://nim-lang.org/">Nim</a> 是一门相对较新的编程语言，它能让用户编写出既易于阅读又高性能的代码。但如果你正在阅读这篇 Nim 教程，很可能你已经对 Nim 有所了解。
+本教程提供在线阅读和 epub 格式的电子书版本。
+这是一个进行中的工作：如果您发现任何错误，或者有改进本教程的建议，请到https://github.com/narimiran/nim-basics/raw/master/nim-basics.epub[book in epub format]报告。</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_who_is_this_for">Who is this for?</h2>
+<h2 id="_本教程适合谁">本教程适合谁</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>People with no or minimal previous programming experience</p>
+<p>没有或仅有少量编程经验的人士</p>
 </li>
 <li>
-<p>People with some programming experience in other programming languages</p>
+<p>有其他编程语言基础的人士</p>
 </li>
 <li>
-<p>People who want to explore Nim for the first time, starting from scratch</p>
+<p>想要从零开始首次探索 Nim 语言的人们</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_who_is_this_not_for">Who is this <em>not</em> for?</h2>
+<h2 id="_这不适合谁">这不适合谁？</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p>People with lots of programming experience: other, more advanced, tutorials might suit you better.
-See <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> or <a href="https://nim-by-example.github.io/">Nim by Example</a>.</p>
+<p>拥有丰富编程经验的人士：其他更高级的教程可能更适合您。可参阅 <a href="https://nim-lang.org/docs/tut1.html">Official Tutorial</a> 或 <a href="https://nim-by-example.github.io/">Nim by Example</a>。</p>
 </li>
 <li>
-<p>People experienced in Nim (feel free to help make this tutorial better)</p>
+<p>已掌握 Nim 语言的人士（欢迎协助完善本教程）</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_to_use_this_tutorial">How to use this tutorial?</h2>
+<h2 id="_如何使用本教程">如何使用本教程？</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The aim of this tutorial is to give you the basics of programming and the Nim syntax so you can have an easier time following other tutorials and/or explore further by yourself.</p>
+<p>本教程旨在向你介绍编程基础及 Nim 语法，以便你能更轻松地跟进其他教程和/或自行深入探索。</p>
 </div>
 <div class="paragraph">
-<p>Instead of just reading what is written, it would be the best if you try the stuff by yourself, modify the examples, think of some examples of your own, and be curious in general.
-The exercises at the end of some chapters should be non-negotiable&#8201;&#8212;&#8201;don&#8217;t skip them.</p>
+<p>与其仅阅读文本内容，最佳方式是亲自尝试、修改示例、构思自己的例子并保持好奇心。某些章节末尾的练习不容忽视——切勿跳过。</p>
 </div>
 <div class="paragraph">
-<p>If you need additional help understanding some parts of the tutorial or with the exercises, you can always ask for help on the <a href="https://forum.nim-lang.org/">Nim forum</a>, the <a href="https://gitter.im/nim-lang/Nim">Nim Gitter channel</a>, their <a href="https://discordapp.com/invite/ezDFDw2">Discord server</a>, or Nim&#8217;s IRC channel on freenode, #nim.</p>
+<p>若需进一步理解教程内容或完成练习，你随时可在 <a href="https://forum.nim-lang.org/">Nim 论坛</a>、https://gitter.im/nim-lang/Nim[Nim Gitter 频道],  <a href="https://discordapp.com/invite/ezDFDw2">Discord server</a>、或  Nim&#8217;s IRC channel on freenode #nim 寻求帮助。</p>
 </div>
 </div>
 </div>
-<h1 id="_installation" class="sect0">Installation</h1>
 <div class="sect1">
-<h2 id="_installing_nim">Installing Nim</h2>
+<h2 id="_译者注">译者注</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Nim has ready made distributions for all three major operating systems and there are several options when it comes to installing Nim.</p>
+<p>本页面的所有内容均为机翻，如有勘误及补充，欢迎在https://github.com/sakuraflows/nim-basics-chs/issues[issues] 提出！</p>
 </div>
 <div class="paragraph">
-<p>You can follow <a href="https://nim-lang.org/install.html">the official installation procedure</a> to install the latest stable version, or you can use a tool called <a href="https://github.com/nim-lang/choosenim">choosenim</a> which enables you to easily switch between the stable and the latest development version if you&#8217;re interested in the latest features and bugfixes.</p>
+<p>nim是一门正在快速迭代的新兴程序语言，因此本文档中的内容不免存在过时情况，请根据自己的实际情况按需阅读和学习。</p>
+</div>
+</div>
+</div>
+<h1 id="_安装指南" class="sect0">安装指南</h1>
+<div class="sect1">
+<h2 id="_安装_nim">安装 Nim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nim 为三大主流操作系统提供了现成的发行版，安装 Nim 时有多种选择方案。</p>
 </div>
 <div class="paragraph">
-<p>Whichever way you choose, just follow the installation procedure explained at each link and Nim should be installed.
-We will check that the installation went well in a coming chapter.</p>
+<p>您可以按照  <a href="https://nim-lang.org/install.html">官方安装流程</a> 来安装最新的稳定版本，或者使用名为 <a href="https://github.com/nim-lang/choosenim">choosenim</a> 的工具——如果您对最新功能和修复感兴趣，它能帮助您轻松切换稳定版和开发版。</p>
 </div>
 <div class="paragraph">
-<p>If you&#8217;re using Linux, there is a high probability that your distribution has Nim in the package manager.
-If you are installing it that way, make sure it&#8217;s the most recent version (see the website for what is the latest version), otherwise install via one of two methods mentioned above.</p>
+<p>无论选择哪种方式，只需按照对应链接中的安装说明操作，Nim 即可完成安装。我们将在后续章节中验证安装是否成功。</p>
 </div>
 <div class="paragraph">
-<p>In this tutorial we will use the stable version.
-Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.x and Nim 2.x.</p>
+<p>若您使用 Linux 系统，您的发行版很可能已通过包管理器收录 Nim。
+若采用以上方式安装，请确保获取的是最新版本（可参照官网确认最新版本号），否则请通过上述两种方法之一进行安装。
+In this tutorial we will use the stable version.
+Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.x and Nim 2.x.
+在本教程中，我们将使用稳定版本。
+最初，本教程是为 Nim 0.19（2018 年 9 月发布）编写的，它应该适用于任何更新的版本，包括 Nim 1.x 和 Nim 2.x。
+（译者注：截止到2025-06-13，nim官网展示的安装版本是2.2.4。有消息称nim3作为实验分支正在开发中）</p>
 </div>
 </div>
 </div>
@@ -242,7 +256,7 @@ If you want syntax highlighting and code completion there are plugins for popula
 <div class="listingblock">
 <div class="title">helloworld.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="s">"Hello World!"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo "Hello World!"</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -268,7 +282,7 @@ The phrase you want to print must follow the <code>echo</code> command and must 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="go">nim c helloworld.nim</span></code></pre>
+<pre class="rouge highlight"><code data-lang="terminal">nim c helloworld.nim</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -281,7 +295,7 @@ We need to type:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="terminal"><span class="go">nim c -r helloworld.nim</span></code></pre>
+<pre class="rouge highlight"><code data-lang="terminal">nim c -r helloworld.nim</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -352,7 +366,7 @@ We can declare a variable (a mutable assignment) using the <code>var</code> keyw
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var &lt;name&gt;: &lt;type&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -360,7 +374,7 @@ We can declare a variable (a mutable assignment) using the <code>var</code> keyw
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="k">type</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var &lt;name&gt;: &lt;type&gt; = &lt;value&gt;</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -385,7 +399,7 @@ We&#8217;ll look more into the various types in the <a href="#_basic_data_types"
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">value</span><span class="o">&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var &lt;name&gt; = &lt;value&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -393,8 +407,8 @@ We&#8217;ll look more into the various types in the <a href="#_basic_data_types"
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">a</span><span class="p">:</span> <span class="kt">int</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="k">var</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var a: int  <i class="conum" data-value="1"></i><b>(1)</b>
+var b = 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -430,10 +444,10 @@ You will see such blocks everywhere in a Nim program, not only for assigning nam
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
-  <span class="n">d</span> <span class="o">=</span> <span class="s">"Hello"</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="sc">'!'</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var
+  c = -11
+  d = "Hello"
+  e = '!'</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -456,11 +470,11 @@ This is easily overridden in settings (<code>Ctrl+,</code>) by setting <code>"ed
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">7</span>           <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">var f = 7           <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="n">f</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>              <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">f</span> <span class="o">=</span> <span class="mi">19</span>
-<span class="n">f</span> <span class="o">=</span> <span class="s">"Hello"</span> <span class="c"># error </span><i class="conum" data-value="3"></i><b>(3)</b> <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+f = -3              <i class="conum" data-value="2"></i><b>(2)</b>
+f = 19
+f = "Hello" # error <i class="conum" data-value="3"></i><b>(3)</b><i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -501,11 +515,11 @@ This is easily overridden in settings (<code>Ctrl+,</code>) by setting <code>"ed
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">const</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">35</span>
-<span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mi">27</span>         <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">const g = 35
+g = -27         # error <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">var</span> <span class="n">h</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-<span class="k">const</span> <span class="n">i</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="mi">7</span> <span class="c"># error </span><i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+var h = -5
+const i = h + 7 # error <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -532,11 +546,11 @@ Constants in Nim are written just like any other variable.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">35</span>
-<span class="n">j</span> <span class="o">=</span> <span class="o">-</span><span class="mi">27</span> <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">let j = 35
+j = -27 # error <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">var</span> <span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
-<span class="k">let</span> <span class="n">l</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">7</span>   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+var k = -5
+let l = k + 7   <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -584,16 +598,16 @@ The result of these two operations is always an integer.</p>
 <div class="listingblock">
 <div class="title">integers.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="mi">11</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  a = 11
+  b = 4
 
-<span class="n">echo</span> <span class="s">"a + b = "</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="s">"a - b = "</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-<span class="n">echo</span> <span class="s">"a * b = "</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-<span class="n">echo</span> <span class="s">"a / b = "</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-<span class="n">echo</span> <span class="s">"a div b = "</span><span class="p">,</span> <span class="n">a</span> <span class="ow">div</span> <span class="n">b</span>
-<span class="n">echo</span> <span class="s">"a mod b = "</span><span class="p">,</span> <span class="n">a</span> <span class="ow">mod</span> <span class="n">b</span></code></pre>
+echo "a + b = ", a + b <i class="conum" data-value="1"></i><b>(1)</b>
+echo "a - b = ", a - b
+echo "a * b = ", a * b
+echo "a / b = ", a / b
+echo "a div b = ", a div b
+echo "a mod b = ", a mod b</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -637,14 +651,14 @@ Operators <code>div</code> and <code>mod</code> are not defined for floats.</p>
 <div class="listingblock">
 <div class="title">floats.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="mf">6.75</span>
-  <span class="n">d</span> <span class="o">=</span> <span class="mf">2.25</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  c = 6.75
+  d = 2.25
 
-<span class="n">echo</span> <span class="s">"c + d = "</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span>
-<span class="n">echo</span> <span class="s">"c - d = "</span><span class="p">,</span> <span class="n">c</span> <span class="o">-</span> <span class="n">d</span>
-<span class="n">echo</span> <span class="s">"c * d = "</span><span class="p">,</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span>
-<span class="n">echo</span> <span class="s">"c / d = "</span><span class="p">,</span> <span class="n">c</span> <span class="o">/</span> <span class="n">d</span></code></pre>
+echo "c + d = ", c + d
+echo "c - d = ", c - d
+echo "c * d = ", c * d
+echo "c / d = ", c / d</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -668,8 +682,8 @@ c / d = 3.0  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span>
-<span class="n">echo</span> <span class="mi">24</span> <span class="o">-</span> <span class="mi">8</span> <span class="o">/</span> <span class="mi">4</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo 2 + 3 * 4
+echo 24 - 8 / 4</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -685,11 +699,11 @@ c / d = 3.0  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
-  <span class="n">f</span> <span class="o">=</span> <span class="mf">23.456</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  e = 5
+  f = 23.456
 
-<span class="n">echo</span> <span class="n">e</span> <span class="o">+</span> <span class="n">f</span>   <span class="c"># error</span></code></pre>
+echo e + f   # error</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -698,15 +712,15 @@ Conversion is straight-forward: to convert to an integer, we use the <code>int</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
-  <span class="n">f</span> <span class="o">=</span> <span class="mf">23.987</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  e = 5
+  f = 23.987
 
-<span class="n">echo</span> <span class="kt">float</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>      <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="kt">int</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>        <i class="conum" data-value="2"></i><b>(2)</b>
+echo float(e)      <i class="conum" data-value="1"></i><b>(1)</b>
+echo int(f)        <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="n">echo</span> <span class="kt">float</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span>  <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="n">echo</span> <span class="n">e</span> <span class="o">+</span> <span class="kt">int</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo float(e) + f  <i class="conum" data-value="3"></i><b>(3)</b>
+echo e + int(f)    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -767,12 +781,12 @@ Multiple digits or multiple letters produce an error.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">h</span> <span class="o">=</span> <span class="sc">'z'</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="sc">'+'</span>
-  <span class="n">j</span> <span class="o">=</span> <span class="sc">'2'</span>
-  <span class="n">k</span> <span class="o">=</span> <span class="sc">'35'</span> <span class="c"># error</span>
-  <span class="n">l</span> <span class="o">=</span> <span class="sc">'xy'</span> <span class="c"># error</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">let
+  h = 'z'
+  i = '+'
+  j = '2'
+  k = '35' # error
+  l = 'xy' # error</code></pre>
 </div>
 </div>
 </div>
@@ -790,12 +804,12 @@ Their content is written between two double quotes (<code>"</code>).</p>
 <div class="listingblock">
 <div class="title">strings.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">m</span> <span class="o">=</span> <span class="s">"word"</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="s">"A sentence with interpunction."</span>
-  <span class="n">o</span> <span class="o">=</span> <span class="s">""</span>    <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">p</span> <span class="o">=</span> <span class="s">"32"</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">q</span> <span class="o">=</span> <span class="s">"!"</span>   <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">let
+  m = "word"
+  n = "A sentence with interpunction."
+  o = ""    <i class="conum" data-value="1"></i><b>(1)</b>
+  p = "32"  <i class="conum" data-value="2"></i><b>(2)</b>
+  q = "!"   <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -821,7 +835,7 @@ Their content is written between two double quotes (<code>"</code>).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="s">"some</span><span class="se">\n</span><span class="s">im</span><span class="se">\t</span><span class="s">ips"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo "some\nim\tips"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -865,8 +879,8 @@ They are used by prepending the escape character <code>\</code> to them.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="s">"some</span><span class="se">\\</span><span class="s">nim</span><span class="se">\\</span><span class="s">tips"</span>
-<span class="n">echo</span> <span class="s">r"some\nim\tips"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo "some\\nim\\tips"
+echo r"some\nim\tips"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -889,21 +903,21 @@ If we don&#8217;t want to change the original string, we can also concatenate (j
 <div class="listingblock">
 <div class="title">stringConcat.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>                     <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">p</span> <span class="o">=</span> <span class="s">"abc"</span>
-  <span class="n">q</span> <span class="o">=</span> <span class="s">"xy"</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="sc">'z'</span>
+<pre class="rouge highlight"><code data-lang="nim">var                     <i class="conum" data-value="1"></i><b>(1)</b>
+  p = "abc"
+  q = "xy"
+  r = 'z'
 
-<span class="n">p</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s">"def"</span><span class="p">)</span>            <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="s">"p is now: "</span><span class="p">,</span> <span class="n">p</span>
+p.add("def")            <i class="conum" data-value="2"></i><b>(2)</b>
+echo "p is now: ", p
 
-<span class="n">q</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>                <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="n">echo</span> <span class="s">"q is now: "</span><span class="p">,</span> <span class="n">q</span>
+q.add(r)                <i class="conum" data-value="3"></i><b>(3)</b>
+echo "q is now: ", q
 
-<span class="n">echo</span> <span class="s">"concat: "</span><span class="p">,</span> <span class="n">p</span> <span class="o">&amp;</span> <span class="n">q</span>  <i class="conum" data-value="4"></i><b>(4)</b>
+echo "concat: ", p &amp; q  <i class="conum" data-value="4"></i><b>(4)</b>
 
-<span class="n">echo</span> <span class="s">"p is still: "</span><span class="p">,</span> <span class="n">p</span>
-<span class="n">echo</span> <span class="s">"q is still: "</span><span class="p">,</span> <span class="n">q</span></code></pre>
+echo "p is still: ", p
+echo "q is still: ", q</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -963,16 +977,16 @@ Do not confuse this with <code>=</code>, which is used for assignment as we saw 
 <div class="listingblock">
 <div class="title">relationalOperators.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">g</span> <span class="o">=</span> <span class="mi">31</span>
-  <span class="n">h</span> <span class="o">=</span> <span class="mi">99</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  g = 31
+  h = 99
 
-<span class="n">echo</span> <span class="s">"g is greater than h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">&gt;</span> <span class="n">h</span>
-<span class="n">echo</span> <span class="s">"g is smaller than h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="n">h</span>
-<span class="n">echo</span> <span class="s">"g is equal to h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">==</span> <span class="n">h</span>
-<span class="n">echo</span> <span class="s">"g is not equal to h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">!=</span> <span class="n">h</span>
-<span class="n">echo</span> <span class="s">"g is greater or equal to h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">&gt;=</span> <span class="n">h</span>
-<span class="n">echo</span> <span class="s">"g is smaller or equal to h: "</span><span class="p">,</span> <span class="n">g</span> <span class="o">&lt;=</span> <span class="n">h</span></code></pre>
+echo "g is greater than h: ", g &gt; h
+echo "g is smaller than h: ", g &lt; h
+echo "g is equal to h: ", g == h
+echo "g is not equal to h: ", g != h
+echo "g is greater or equal to h: ", g &gt;= h
+echo "g is smaller or equal to h: ", g &lt;= h</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -991,23 +1005,23 @@ g is smaller or equal to h: true</code></pre>
 <div class="listingblock">
 <div class="title">relationalOperators.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="sc">'a'</span>
-  <span class="n">j</span> <span class="o">=</span> <span class="sc">'d'</span>
-  <span class="n">k</span> <span class="o">=</span> <span class="sc">'Z'</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  i = 'a'
+  j = 'd'
+  k = 'Z'
 
-<span class="n">echo</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span>
-<span class="n">echo</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+echo i &lt; j
+echo i &lt; k  <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">let</span>
-  <span class="n">m</span> <span class="o">=</span> <span class="s">"axyb"</span>
-  <span class="n">n</span> <span class="o">=</span> <span class="s">"axyz"</span>
-  <span class="n">o</span> <span class="o">=</span> <span class="s">"ba"</span>
-  <span class="n">p</span> <span class="o">=</span> <span class="s">"ba "</span>
+let
+  m = "axyb"
+  n = "axyz"
+  o = "ba"
+  p = "ba "
 
-<span class="n">echo</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">n</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">o</span>  <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="n">echo</span> <span class="n">o</span> <span class="o">&lt;</span> <span class="n">p</span>  <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo m &lt; n  <i class="conum" data-value="2"></i><b>(2)</b>
+echo n &lt; o  <i class="conum" data-value="3"></i><b>(3)</b>
+echo o &lt; p  <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1064,20 +1078,20 @@ true</code></pre>
 <div class="listingblock">
 <div class="title">logicalOperators.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="s">"T and T: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">and</span> <span class="kp">true</span>
-<span class="n">echo</span> <span class="s">"T and F: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">and</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"F and F: "</span><span class="p">,</span> <span class="kp">false</span> <span class="ow">and</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"---"</span>
-<span class="n">echo</span> <span class="s">"T or T: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">or</span> <span class="kp">true</span>
-<span class="n">echo</span> <span class="s">"T or F: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">or</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"F or F: "</span><span class="p">,</span> <span class="kp">false</span> <span class="ow">or</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"---"</span>
-<span class="n">echo</span> <span class="s">"T xor T: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">xor</span> <span class="kp">true</span>
-<span class="n">echo</span> <span class="s">"T xor F: "</span><span class="p">,</span> <span class="kp">true</span> <span class="ow">xor</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"F xor F: "</span><span class="p">,</span> <span class="kp">false</span> <span class="ow">xor</span> <span class="kp">false</span>
-<span class="n">echo</span> <span class="s">"---"</span>
-<span class="n">echo</span> <span class="s">"not T: "</span><span class="p">,</span> <span class="ow">not</span> <span class="kp">true</span>
-<span class="n">echo</span> <span class="s">"not F: "</span><span class="p">,</span> <span class="ow">not</span> <span class="kp">false</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo "T and T: ", true and true
+echo "T and F: ", true and false
+echo "F and F: ", false and false
+echo "---"
+echo "T or T: ", true or true
+echo "T or F: ", true or false
+echo "F or F: ", false or false
+echo "---"
+echo "T xor T: ", true xor true
+echo "T xor F: ", true xor false
+echo "F xor F: ", false xor false
+echo "---"
+echo "not T: ", not true
+echo "not F: ", not false</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1167,13 +1181,13 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">if</span> <span class="n">eggPrice</span> <span class="o">&lt;</span> <span class="n">wantedPrice</span><span class="p">:</span>
-  <span class="n">buyEggs</span>
+<pre class="rouge highlight"><code data-lang="nim">if eggPrice &lt; wantedPrice:
+  buyEggs
 
-<span class="k">if</span> <span class="n">isRaining</span><span class="p">:</span>
-  <span class="n">bring</span> <span class="n">umbrella</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">bring</span> <span class="n">sunglasses</span></code></pre>
+if isRaining:
+  bring umbrella
+else:
+  bring sunglasses</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1192,8 +1206,8 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span><span class="p">:</span>     <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="o">&lt;</span><span class="n">indented</span> <span class="k">block</span><span class="o">&gt;</span>  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">if &lt;condition&gt;:     <i class="conum" data-value="1"></i><b>(1)</b>
+  &lt;indented block&gt;  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1214,26 +1228,26 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 <div class="listingblock">
 <div class="title">if.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="mi">11</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">22</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="mi">999</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  a = 11
+  b = 22
+  c = 999
 
-<span class="k">if</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"a is smaller than b"</span>
-  <span class="k">if</span> <span class="mi">10</span><span class="o">*</span><span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-    <span class="n">echo</span> <span class="s">"not only that, a is *much* smaller than b"</span>
+if a &lt; b:
+  echo "a is smaller than b"
+  if 10*a &lt; b:  <i class="conum" data-value="1"></i><b>(1)</b>
+    echo "not only that, a is *much* smaller than b"
 
-<span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"b is smaller than c"</span>
-  <span class="k">if</span> <span class="mi">10</span><span class="o">*</span><span class="n">b</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">:</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-    <span class="n">echo</span> <span class="s">"not only that, b is *much* smaller than c"</span>
+if b &lt; c:
+  echo "b is smaller than c"
+  if 10*b &lt; c:  <i class="conum" data-value="2"></i><b>(2)</b>
+    echo "not only that, b is *much* smaller than c"
 
-<span class="k">if</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>     <i class="conum" data-value="3"></i><b>(3)</b>
-  <span class="n">echo</span> <span class="s">"a and b are larger than c"</span>
-  <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="ow">and</span> <span class="mi">321</span> <span class="o">&gt;</span> <span class="mi">123</span><span class="p">:</span>  <i class="conum" data-value="4"></i><b>(4)</b>
-    <span class="n">echo</span> <span class="s">"did you know that 1 is smaller than 100?"</span>
-    <span class="n">echo</span> <span class="s">"and 321 is larger than 123! wow!"</span></code></pre>
+if a+b &gt; c:     <i class="conum" data-value="3"></i><b>(3)</b>
+  echo "a and b are larger than c"
+  if 1 &lt; 100 and 321 &gt; 123:  <i class="conum" data-value="4"></i><b>(4)</b>
+    echo "did you know that 1 is smaller than 100?"
+    echo "and 321 is larger than 123! wow!"</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1271,19 +1285,19 @@ not only that, b is *much* smaller than c</code></pre>
 <div class="listingblock">
 <div class="title">else.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">d</span> <span class="o">=</span> <span class="mi">63</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="mf">2.718</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  d = 63
+  e = 2.718
 
-<span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"d is a small number"</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"d is a large number"</span>
+if d &lt; 10:
+  echo "d is a small number"
+else:
+  echo "d is a large number"
 
-<span class="k">if</span> <span class="n">e</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"e is a small number"</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"e is a large number"</span></code></pre>
+if e &lt; 10:
+  echo "e is a small number"
+else:
+  echo "e is a large number"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1317,25 +1331,25 @@ After that, all further statements are ignored.</p>
 <div class="listingblock">
 <div class="title">elif.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">f</span> <span class="o">=</span> <span class="mi">3456</span>
-  <span class="n">g</span> <span class="o">=</span> <span class="mi">7</span>
+<pre class="rouge highlight"><code data-lang="nim">let
+  f = 3456
+  g = 7
 
-<span class="k">if</span> <span class="n">f</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"f is smaller than 10"</span>
-<span class="k">elif</span> <span class="n">f</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"f is between 10 and 100"</span>
-<span class="k">elif</span> <span class="n">f</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"f is between 100 and 1000"</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"f is larger than 1000"</span>
+if f &lt; 10:
+  echo "f is smaller than 10"
+elif f &lt; 100:
+  echo "f is between 10 and 100"
+elif f &lt; 1000:
+  echo "f is between 100 and 1000"
+else:
+  echo "f is larger than 1000"
 
-<span class="k">if</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"g is smaller than 1000"</span>
-<span class="k">elif</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"g is smaller than 100"</span>
-<span class="k">elif</span> <span class="n">g</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"g is smaller than 10"</span></code></pre>
+if g &lt; 1000:
+  echo "g is smaller than 1000"
+elif g &lt; 100:
+  echo "g is smaller than 100"
+elif g &lt; 10:
+  echo "g is smaller than 10"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1371,14 +1385,14 @@ A <code>case</code> statement, however, doesn&#8217;t take multiple boolean cond
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Five!"</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Seven!"</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Ten!"</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"unknown number"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">if x == 5:
+  echo "Five!"
+elif x == 7:
+  echo "Seven!"
+elif x == 10:
+  echo "Ten!"
+else:
+  echo "unknown number"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1386,15 +1400,15 @@ A <code>case</code> statement, however, doesn&#8217;t take multiple boolean cond
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">case</span> <span class="n">x</span>
-<span class="k">of</span> <span class="mi">5</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Five!"</span>
-<span class="k">of</span> <span class="mi">7</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Seven!"</span>
-<span class="k">of</span> <span class="mi">10</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"Ten!"</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"unknown number"</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">case x
+of 5:
+  echo "Five!"
+of 7:
+  echo "Seven!"
+of 10:
+  echo "Ten!"
+else:
+  echo "unknown number"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1404,16 +1418,16 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 <div class="listingblock">
 <div class="title">case.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">h</span> <span class="o">=</span> <span class="sc">'y'</span>
+<pre class="rouge highlight"><code data-lang="nim">let h = 'y'
 
-<span class="k">case</span> <span class="n">h</span>
-<span class="k">of</span> <span class="sc">'x'</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"You've chosen x"</span>
-<span class="k">of</span> <span class="sc">'y'</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"You've chosen y"</span>
-<span class="k">of</span> <span class="sc">'z'</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"You've chosen z"</span>
-<span class="k">else</span><span class="p">:</span> <span class="k">discard</span>  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+case h
+of 'x':
+  echo "You've chosen x"
+of 'y':
+  echo "You've chosen y"
+of 'z':
+  echo "You've chosen z"
+else: discard  <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1435,17 +1449,17 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 <div class="listingblock">
 <div class="title">multipleCase.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">7</span>
+<pre class="rouge highlight"><code data-lang="nim">let i = 7
 
-<span class="k">case</span> <span class="n">i</span>
-  <span class="k">of</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="s">"i is zero"</span>
-  <span class="k">of</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="s">"i is odd"</span>
-  <span class="k">of</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="s">"i is even"</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="s">"i is too large"</span></code></pre>
+case i
+  of 0:
+    echo "i is zero"
+  of 1, 3, 5, 7, 9:
+    echo "i is odd"
+  of 2, 4, 6, 8:
+    echo "i is even"
+  else:
+    echo "i is too large"</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1484,8 +1498,8 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="o">&lt;</span><span class="n">loopVariable</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">iterable</span><span class="o">&gt;</span><span class="p">:</span>
-  <span class="o">&lt;</span><span class="n">loop</span> <span class="n">body</span><span class="o">&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">for &lt;loopVariable&gt; in &lt;iterable&gt;:
+  &lt;loop body&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1515,13 +1529,13 @@ For the default range iterable, <code>start</code> needs to be smaller than <cod
 <div class="listingblock">
 <div class="title">for1.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">5</span> <span class="p">..</span> <span class="mi">9</span><span class="p">:</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">echo</span> <span class="n">n</span>
+<pre class="rouge highlight"><code data-lang="nim">for n in 5 .. 9:  <i class="conum" data-value="1"></i><b>(1)</b>
+  echo n
 
-<span class="n">echo</span> <span class="s">""</span>
+echo ""
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">5</span> <span class="p">..</span><span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span> <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">echo</span> <span class="n">n</span></code></pre>
+for n in 5 ..&lt; 9: <i class="conum" data-value="2"></i><b>(2)</b>
+  echo n</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1556,8 +1570,8 @@ For the default range iterable, <code>start</code> needs to be smaller than <cod
 <div class="listingblock">
 <div class="title">for2.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">countup</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">echo</span> <span class="n">n</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">for n in countup(0, 16, 4):  <i class="conum" data-value="1"></i><b>(1)</b>
+  echo n</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1584,13 +1598,13 @@ Even if we&#8217;re counting down, the step size must be positive.</p>
 <div class="listingblock">
 <div class="title">for2.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">countdown</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>       <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">echo</span> <span class="n">n</span>
+<pre class="rouge highlight"><code data-lang="nim">for n in countdown(4, 0):       <i class="conum" data-value="1"></i><b>(1)</b>
+  echo n
 
-<span class="n">echo</span> <span class="s">""</span>
+echo ""
 
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">countdown</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">echo</span> <span class="n">n</span></code></pre>
+for n in countdown(-3, -9, 2):  <i class="conum" data-value="2"></i><b>(2)</b>
+  echo n</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1625,10 +1639,10 @@ Even if we&#8217;re counting down, the step size must be positive.</p>
 <div class="listingblock">
 <div class="title">for3.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">word</span> <span class="o">=</span> <span class="s">"alphabet"</span>
+<pre class="rouge highlight"><code data-lang="nim">let word = "alphabet"
 
-<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="n">letter</span></code></pre>
+for letter in word:
+  echo letter</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1650,8 +1664,8 @@ This is very practical if you want to iterate through one iterable, and simultan
 <div class="listingblock">
 <div class="title">for3.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
-  <span class="n">echo</span> <span class="s">"letter "</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">" is: "</span><span class="p">,</span> <span class="n">letter</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">for i, letter in word:
+  echo "letter ", i, " is: ", letter</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1681,13 +1695,13 @@ They are used when we don&#8217;t know in advance how many times the loop will r
 <div class="listingblock">
 <div class="title">while.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<pre class="rouge highlight"><code data-lang="nim">var a = 1
 
-<span class="k">while</span> <span class="n">a</span><span class="o">*</span><span class="n">a</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span> <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">echo</span> <span class="s">"a is: "</span><span class="p">,</span> <span class="n">a</span>
-  <span class="n">inc</span> <span class="n">a</span>         <i class="conum" data-value="2"></i><b>(2)</b>
+while a*a &lt; 10: <i class="conum" data-value="1"></i><b>(1)</b>
+  echo "a is: ", a
+  inc a         <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="n">echo</span> <span class="s">"final value of a: "</span><span class="p">,</span> <span class="n">a</span></code></pre>
+echo "final value of a: ", a</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1725,13 +1739,13 @@ With the <code>break</code> statement, when <code>i</code> becomes 3, we immedia
 <div class="listingblock">
 <div class="title">break.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<pre class="rouge highlight"><code data-lang="nim">var i = 1
 
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">:</span>
-  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-    <span class="k">break</span>
-  <span class="n">echo</span> <span class="n">i</span>
-  <span class="n">inc</span> <span class="n">i</span></code></pre>
+while i &lt; 1000:
+  if i == 3:
+    break
+  echo i
+  inc i</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1750,10 +1764,10 @@ Notice how 3 and 6 are missing from the output of the following code:</p>
 <div class="listingblock">
 <div class="title">continue.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mi">1</span> <span class="p">..</span> <span class="mi">8</span><span class="p">:</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
-    <span class="k">continue</span>
-  <span class="n">echo</span> <span class="n">i</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">for i in 1 .. 8:
+  if (i == 3) or (i == 6):
+    continue
+  echo i</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1791,15 +1805,15 @@ Create a program which will print first 30 rounds of Fizz buzz. (Hint: beware of
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="ow">in</span>	<span class="o">|</span> <span class="n">cm</span>
-<span class="o">----------------</span>
-<span class="mi">1</span>	<span class="o">|</span> <span class="mf">2.54</span>
-<span class="mi">4</span>	<span class="o">|</span> <span class="mf">10.16</span>
-<span class="mi">7</span>	<span class="o">|</span> <span class="mf">17.78</span>
-<span class="mi">10</span>	<span class="o">|</span> <span class="mf">25.4</span>
-<span class="mi">13</span>	<span class="o">|</span> <span class="mf">33.02</span>
-<span class="mi">16</span>	<span class="o">|</span> <span class="mf">40.64</span>
-<span class="mi">19</span>	<span class="o">|</span> <span class="mf">48.26</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">in	| cm
+----------------
+1	| 2.54
+4	| 10.16
+7	| 17.78
+10	| 25.4
+13	| 33.02
+16	| 40.64
+19	| 48.26</code></pre>
 </div>
 </div>
 </div>
@@ -1817,8 +1831,8 @@ Written in pseudocode:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">groceryList</span> <span class="o">=</span> <span class="o">[</span><span class="n">ham</span><span class="p">,</span> <span class="n">eggs</span><span class="p">,</span> <span class="n">bread</span><span class="p">,</span> <span class="n">apples</span><span class="o">]</span>
-<span class="n">primes</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="o">]</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">groceryList = [ham, eggs, bread, apples]
+primes = [1, 2, 3, 5, 7]</code></pre>
 </div>
 </div>
 </div>
@@ -1841,11 +1855,11 @@ The declaration can be omitted if both length and type can be inferred from the 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">a</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">3</span><span class="p">,</span> <span class="kt">int</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="o">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="o">]</span>        <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">c</span> <span class="o">=</span> <span class="o">[]</span>  <span class="c"># error      </span><i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">d</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">7</span><span class="p">,</span> <span class="kt">string</span><span class="o">]</span>  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var
+  a: array[3, int] = [5, 7, 9]
+  b = [5, 7, 9]        <i class="conum" data-value="1"></i><b>(1)</b>
+  c = []  # error      <i class="conum" data-value="2"></i><b>(2)</b>
+  d: array[7, string]  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1869,11 +1883,11 @@ The declaration can be omitted if both length and type can be inferred from the 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">const</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="k">let</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<pre class="rouge highlight"><code data-lang="nim">const m = 3
+let n = 5
 
-<span class="k">var</span> <span class="n">a</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="n">m</span><span class="p">,</span> <span class="kt">char</span><span class="o">]</span>
-<span class="k">var</span> <span class="n">b</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="n">n</span><span class="p">,</span> <span class="kt">char</span><span class="o">]</span> <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+var a: array[m, char]
+var b: array[n, char] # error <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1898,9 +1912,9 @@ Sequences are also homogeneous, i.e. every element in a sequence has to be the s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">e1</span><span class="p">:</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span> <span class="o">=</span> <span class="o">@[]</span>   <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">f</span> <span class="o">=</span> <span class="o">@[</span><span class="s">"abc"</span><span class="p">,</span> <span class="s">"def"</span><span class="o">]</span>  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var
+  e1: seq[int] = @[]   <i class="conum" data-value="1"></i><b>(1)</b>
+  f = @["abc", "def"]  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1920,8 +1934,8 @@ Sequences are also homogeneous, i.e. every element in a sequence has to be the s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">e</span> <span class="o">=</span> <span class="n">newSeq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span><span class="p">()</span> <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">var
+  e = newSeq[int]() <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1940,15 +1954,15 @@ For this to work the sequence must be mutable (defined with <code>var</code>), a
 <div class="listingblock">
 <div class="title">seq.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">g</span> <span class="o">=</span> <span class="o">@[</span><span class="sc">'x'</span><span class="p">,</span> <span class="sc">'y'</span><span class="o">]</span>
-  <span class="n">h</span> <span class="o">=</span> <span class="o">@[</span><span class="sc">'1'</span><span class="p">,</span> <span class="sc">'2'</span><span class="p">,</span> <span class="sc">'3'</span><span class="o">]</span>
+<pre class="rouge highlight"><code data-lang="nim">var
+  g = @['x', 'y']
+  h = @['1', '2', '3']
 
-<span class="n">g</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="sc">'z'</span><span class="p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="n">g</span>
+g.add('z')  <i class="conum" data-value="1"></i><b>(1)</b>
+echo g
 
-<span class="n">h</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>    <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">h</span></code></pre>
+h.add(g)    <i class="conum" data-value="2"></i><b>(2)</b>
+echo h</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1974,10 +1988,10 @@ For this to work the sequence must be mutable (defined with <code>var</code>), a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="o">]</span>
+<pre class="rouge highlight"><code data-lang="nim">var i = @[9, 8, 7]
 
-<span class="n">i</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mf">9.81</span><span class="p">)</span> <span class="c"># error </span><i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">g</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>    <span class="c"># error </span><i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+i.add(9.81) # error <i class="conum" data-value="1"></i><b>(1)</b>
+g.add(i)    # error <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1997,11 +2011,11 @@ For this to work the sequence must be mutable (defined with <code>var</code>), a
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">i</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="o">]</span>
-<span class="n">echo</span> <span class="n">i</span><span class="p">.</span><span class="n">len</span>
+<pre class="rouge highlight"><code data-lang="nim">var i = @[9, 8, 7]
+echo i.len
 
-<span class="n">i</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">echo</span> <span class="n">i</span><span class="p">.</span><span class="n">len</span></code></pre>
+i.add(6)
+echo i.len</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -2032,10 +2046,10 @@ The last element (first from the back) has index <code>^1</code>.</p>
 <div class="listingblock">
 <div class="title">indexing.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">j</span> <span class="o">=</span> <span class="o">[</span><span class="sc">'a'</span><span class="p">,</span> <span class="sc">'b'</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">,</span> <span class="sc">'d'</span><span class="p">,</span> <span class="sc">'e'</span><span class="o">]</span>
+<pre class="rouge highlight"><code data-lang="nim">let j = ['a', 'b', 'c', 'd', 'e']
 
-<span class="n">echo</span> <span class="n">j</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>   <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="n">j</span><span class="o">[</span><span class="p">^</span><span class="mi">1</span><span class="o">]</span>  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+echo j[1]   <i class="conum" data-value="1"></i><b>(1)</b>
+echo j[^1]  <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2073,8 +2087,8 @@ Using <code>start ..&lt; stop</code> syntax, the <code>stop</code> index is not 
 <div class="listingblock">
 <div class="title">indexing.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="n">j</span><span class="o">[</span><span class="mi">0</span> <span class="p">..</span> <span class="mi">3</span><span class="o">]</span>
-<span class="n">echo</span> <span class="n">j</span><span class="o">[</span><span class="mi">0</span> <span class="p">..</span><span class="o">&lt;</span> <span class="mi">3</span><span class="o">]</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">echo j[0 .. 3]
+echo j[0 ..&lt; 3]</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -2089,20 +2103,20 @@ Using <code>start ..&lt; stop</code> syntax, the <code>stop</code> index is not 
 <div class="listingblock">
 <div class="title">assign.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span>
-  <span class="n">k</span><span class="p">:</span> <span class="kt">array</span><span class="o">[</span><span class="mi">5</span><span class="p">,</span> <span class="kt">int</span><span class="o">]</span>
-  <span class="n">l</span> <span class="o">=</span> <span class="o">@[</span><span class="sc">'p'</span><span class="p">,</span> <span class="sc">'w'</span><span class="p">,</span> <span class="sc">'r'</span><span class="o">]</span>
-  <span class="n">m</span> <span class="o">=</span> <span class="s">"Tom and Jerry"</span>
+<pre class="rouge highlight"><code data-lang="nim">var
+  k: array[5, int]
+  l = @['p', 'w', 'r']
+  m = "Tom and Jerry"
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="mi">0</span> <span class="p">..</span> <span class="mi">4</span><span class="p">:</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">k</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">i</span>
-<span class="n">echo</span> <span class="n">k</span>
+for i in 0 .. 4:  <i class="conum" data-value="1"></i><b>(1)</b>
+  k[i] = 7 * i
+echo k
 
-<span class="n">l</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="sc">'q'</span>        <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">l</span>
+l[1] = 'q'        <i class="conum" data-value="2"></i><b>(2)</b>
+echo l
 
-<span class="n">m</span><span class="o">[</span><span class="mi">8</span> <span class="p">..</span> <span class="mi">9</span><span class="o">]</span> <span class="o">=</span> <span class="s">"Ba"</span>  <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="n">echo</span> <span class="n">m</span></code></pre>
+m[8 .. 9] = "Ba"  <i class="conum" data-value="3"></i><b>(3)</b>
+echo m</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2144,8 +2158,8 @@ Similarly to arrays, tuples have fixed-size.</p>
 <div class="listingblock">
 <div class="title">tuples.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span> <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="s">"Banana"</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="sc">'c'</span><span class="p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="n">n</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">let n = ("Banana", 2, 'c')  <i class="conum" data-value="1"></i><b>(1)</b>
+echo n</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2168,11 +2182,11 @@ This can be used for accessing the elements of the tuple, instead of indexing.</
 <div class="listingblock">
 <div class="title">tuples.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">o</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="s">"Banana"</span><span class="p">,</span> <span class="n">weight</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rating</span><span class="p">:</span> <span class="sc">'c'</span><span class="p">)</span>
+<pre class="rouge highlight"><code data-lang="nim">var o = (name: "Banana", weight: 2, rating: 'c')
 
-<span class="n">o</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">7</span>          <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">o</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Apple"</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">o</span></code></pre>
+o[1] = 7          <i class="conum" data-value="1"></i><b>(1)</b>
+o.name = "Apple"  <i class="conum" data-value="2"></i><b>(2)</b>
+echo o</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2309,7 +2323,7 @@ In Nim, the word <code>func</code> is currently reserved to be used as the more 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="err">&lt;</span><span class="nf">name</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">p1</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">type1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">p2</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">type2</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...):</span> <span class="o">&lt;</span><span class="n">returnType</span><span class="o">&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">proc &lt;name&gt;(&lt;p1&gt;: &lt;type1&gt;, &lt;p2&gt;: &lt;type2&gt;, ...): &lt;returnType&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2318,13 +2332,13 @@ In Nim, the word <code>func</code> is currently reserved to be used as the more 
 <div class="listingblock">
 <div class="title">callProcs.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">findMax</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="kt">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">x</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">y</span>
-  <span class="c"># this is inside of the procedure</span>
-<span class="c"># this is outside of the procedure</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">proc findMax(x: int, y: int): int =  <i class="conum" data-value="1"></i><b>(1)</b>
+  if x &gt; y:
+    return x  <i class="conum" data-value="2"></i><b>(2)</b>
+  else:
+    return y
+  # this is inside of the procedure
+# this is outside of the procedure</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2344,12 +2358,12 @@ In Nim, the word <code>func</code> is currently reserved to be used as the more 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">echoLanguageRating</span><span class="p">(</span><span class="n">language</span><span class="p">:</span> <span class="kt">string</span><span class="p">)</span> <span class="o">=</span> <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">case</span> <span class="n">language</span>
-  <span class="k">of</span> <span class="s">"Nim"</span><span class="p">,</span> <span class="s">"nim"</span><span class="p">,</span> <span class="s">"NIM"</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="n">language</span><span class="p">,</span> <span class="s">" is the best language!"</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="n">echo</span> <span class="n">language</span><span class="p">,</span> <span class="s">" might be a second-best language."</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">proc echoLanguageRating(language: string) = <i class="conum" data-value="1"></i><b>(1)</b>
+  case language
+  of "Nim", "nim", "NIM":
+    echo language, " is the best language!"
+  else:
+    echo language, " might be a second-best language."</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2369,11 +2383,11 @@ Doing something like this will throw an error:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">changeArgument</span><span class="p">(</span><span class="n">argument</span><span class="p">:</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span>
-  <span class="n">argument</span> <span class="o">+=</span> <span class="mi">5</span>
+<pre class="rouge highlight"><code data-lang="nim">proc changeArgument(argument: int) =
+  argument += 5
 
-<span class="k">var</span> <span class="n">ourVariable</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">changeArgument</span><span class="p">(</span><span class="n">ourVariable</span><span class="p">)</span></code></pre>
+var ourVariable = 10
+changeArgument(ourVariable)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2381,14 +2395,14 @@ Doing something like this will throw an error:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">changeArgument</span><span class="p">(</span><span class="n">argument</span><span class="p">:</span> <span class="k">var</span> <span class="kt">int</span><span class="p">)</span> <span class="o">=</span> <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">argument</span> <span class="o">+=</span> <span class="mi">5</span>
+<pre class="rouge highlight"><code data-lang="nim">proc changeArgument(argument: var int) = <i class="conum" data-value="1"></i><b>(1)</b>
+  argument += 5
 
-<span class="k">var</span> <span class="n">ourVariable</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">changeArgument</span><span class="p">(</span><span class="n">ourVariable</span><span class="p">)</span>
-<span class="n">echo</span> <span class="n">ourVariable</span>
-<span class="n">changeArgument</span><span class="p">(</span><span class="n">ourVariable</span><span class="p">)</span>
-<span class="n">echo</span> <span class="n">ourVariable</span></code></pre>
+var ourVariable = 10
+changeArgument(ourVariable)
+echo ourVariable
+changeArgument(ourVariable)
+echo ourVariable</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2413,14 +2427,14 @@ Doing something like this will throw an error:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">var</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+<pre class="rouge highlight"><code data-lang="nim">var x = 100
 
-<span class="k">proc </span><span class="nf">echoX</span><span class="p">()</span> <span class="o">=</span>
-  <span class="n">echo</span> <span class="n">x</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>  <i class="conum" data-value="2"></i><b>(2)</b>
+proc echoX() =
+  echo x  <i class="conum" data-value="1"></i><b>(1)</b>
+  x += 1  <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="n">echoX</span><span class="p">()</span>
-<span class="n">echoX</span><span class="p">()</span></code></pre>
+echoX()
+echoX()</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2437,8 +2451,8 @@ Doing something like this will throw an error:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="mi">100</span>
-<span class="mi">101</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">100
+101</code></pre>
 </div>
 </div>
 </div>
@@ -2452,7 +2466,7 @@ The usual way of calling procedures/functions in many programming languages is t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="o">&lt;</span><span class="n">procName</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">arg1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">arg2</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...)</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">&lt;procName&gt;(&lt;arg1&gt;, &lt;arg2&gt;, ...)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2464,14 +2478,14 @@ The usual way of calling procedures/functions in many programming languages is t
 <div class="listingblock">
 <div class="title">callProcs.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">let</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="n">findMax</span><span class="p">(</span><span class="mi">987</span><span class="p">,</span> <span class="mi">789</span><span class="p">)</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="n">findMax</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">321</span><span class="p">)</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="n">findMax</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">let
+  a = findMax(987, 789)
+  b = findMax(123, 321)
+  c = findMax(a, b)  <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="n">echo</span> <span class="n">a</span>
-<span class="n">echo</span> <span class="n">b</span>
-<span class="n">echo</span> <span class="n">c</span></code></pre>
+echo a
+echo b
+echo c</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2500,7 +2514,7 @@ The usual way of calling procedures/functions in many programming languages is t
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="o">&lt;</span><span class="n">arg1</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">procName</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">arg2</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...)</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">&lt;arg1&gt;.&lt;procName&gt;(&lt;arg2&gt;, ...)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2509,7 +2523,7 @@ We can also omit the parentheses around the arguments:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="o">&lt;</span><span class="n">procName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">arg1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">arg2</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">&lt;procName&gt; &lt;arg1&gt;, &lt;arg2&gt;, ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2518,7 +2532,7 @@ These two can also be combined like this, but this syntax however is not seen ve
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="o">&lt;</span><span class="n">arg1</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">procName</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">arg2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">arg3</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">...</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">&lt;arg1&gt;.&lt;procName&gt; &lt;arg2&gt;, &lt;arg3&gt;, ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2530,23 +2544,23 @@ These two can also be combined like this, but this syntax however is not seen ve
 <div class="listingblock">
 <div class="title">ufcs.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<pre class="rouge highlight"><code data-lang="nim">proc plus(x, y: int): int =  <i class="conum" data-value="1"></i><b>(1)</b>
+  return x + y
 
-<span class="k">proc </span><span class="nf">multi</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>
-  <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+proc multi(x, y: int): int =
+  return x * y
 
-<span class="k">let</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="mi">4</span>
+let
+  a = 2
+  b = 3
+  c = 4
 
-<span class="n">echo</span> <span class="n">a</span><span class="p">.</span><span class="n">plus</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="n">plus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="n">echo</span> <span class="n">c</span><span class="p">.</span><span class="n">multi</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="n">multi</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+echo a.plus(b) == plus(a, b)
+echo c.multi(a) == multi(c, a)
 
 
-<span class="n">echo</span> <span class="n">a</span><span class="p">.</span><span class="n">plus</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="n">multi</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">c</span><span class="p">.</span><span class="n">multi</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="n">plus</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+echo a.plus(b).multi(c)  <i class="conum" data-value="2"></i><b>(2)</b>
+echo c.multi(b).plus(a)  <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2585,14 +2599,14 @@ The procedure will return the value of this <code>result</code> variable when it
 <div class="listingblock">
 <div class="title">result.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">findBiggest</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>  <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">result</span><span class="p">:</span>
-      <span class="n">result</span> <span class="o">=</span> <span class="n">number</span>
-  <span class="c"># the end of proc                   </span><i class="conum" data-value="2"></i><b>(2)</b>
+<pre class="rouge highlight"><code data-lang="nim">proc findBiggest(a: seq[int]): int =  <i class="conum" data-value="1"></i><b>(1)</b>
+  for number in a:
+    if number &gt; result:
+      result = number
+  # the end of proc                   <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="k">let</span> <span class="n">d</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="o">]</span>
-<span class="n">echo</span> <span class="n">findBiggest</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></code></pre>
+let d = @[3, -5, 11, 33, 7, -15]
+echo findBiggest(d)</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2635,15 +2649,15 @@ In older Nim versions (before Nim 0.19.0), the default value of strings and sequ
 <div class="listingblock">
 <div class="title">result.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">keepOdds</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span><span class="p">):</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span> <span class="o">=</span>
-  <span class="c"># result = @[]          </span><i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">number</span> <span class="ow">mod</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="n">result</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<pre class="rouge highlight"><code data-lang="nim">proc keepOdds(a: seq[int]): seq[int] =
+  # result = @[]          <i class="conum" data-value="1"></i><b>(1)</b>
+  for number in a:
+    if number mod 2 == 1:
+      result.add(number)
 
 
-<span class="k">let</span> <span class="n">f</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">98</span><span class="o">]</span>
-<span class="n">echo</span> <span class="n">keepOdds</span><span class="p">(</span><span class="n">f</span><span class="p">)</span></code></pre>
+let f = @[1, 6, 4, 43, 57, 34, 98]
+echo keepOdds(f)</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2669,24 +2683,24 @@ In older Nim versions, sequences must be initialized, and without this line the 
 <div class="listingblock">
 <div class="title">filterOdds.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">isDivisibleBy3</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">bool</span> <span class="o">=</span>
-  <span class="k">return</span> <span class="n">x</span> <span class="ow">mod</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+<pre class="rouge highlight"><code data-lang="nim">proc isDivisibleBy3(x: int): bool =
+  return x mod 3 == 0
 
-<span class="k">proc </span><span class="nf">filterMultiplesOf3</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span><span class="p">):</span> <span class="kt">seq</span><span class="o">[</span><span class="kt">int</span><span class="o">]</span> <span class="o">=</span>
-  <span class="c"># result = @[]            </span><i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">i</span><span class="p">.</span><span class="n">isDivisibleBy3</span><span class="p">():</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-      <span class="n">result</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+proc filterMultiplesOf3(a: seq[int]): seq[int] =
+  # result = @[]            <i class="conum" data-value="1"></i><b>(1)</b>
+  for i in a:
+    if i.isDivisibleBy3():  <i class="conum" data-value="2"></i><b>(2)</b>
+      result.add(i)
 
 
-<span class="k">let</span>
-  <span class="n">g</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
-  <span class="n">h</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="o">]</span>
-  <span class="n">i</span> <span class="o">=</span> <span class="o">@[</span><span class="mi">626</span><span class="p">,</span> <span class="mi">45390</span><span class="p">,</span> <span class="mi">3219</span><span class="p">,</span> <span class="mi">4210</span><span class="p">,</span> <span class="mi">4126</span><span class="o">]</span>
+let
+  g = @[2, 6, 5, 7, 9, 0, 5, 3]
+  h = @[5, 4, 3, 2, 1]
+  i = @[626, 45390, 3219, 4210, 4126]
 
-<span class="n">echo</span> <span class="n">filterMultiplesOf3</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-<span class="n">echo</span> <span class="n">h</span><span class="p">.</span><span class="n">filterMultiplesOf3</span><span class="p">()</span>
-<span class="n">echo</span> <span class="n">filterMultiplesOf3</span> <span class="n">i</span>   <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+echo filterMultiplesOf3(g)
+echo h.filterMultiplesOf3()
+echo filterMultiplesOf3 i   <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2723,10 +2737,10 @@ The reason for this is that we have to declare procedures before we can call the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="mf">5.</span><span class="n">plus</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c"># error      </span><i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">echo 5.plus(10) # error      <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">proc </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span></code></pre>
+proc plus(x, y: int): int =  <i class="conum" data-value="2"></i><b>(2)</b>
+  return x + y</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2746,12 +2760,12 @@ The reason for this is that we have to declare procedures before we can call the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span>    <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">proc plus(x, y: int): int    <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="n">echo</span> <span class="mf">5.</span><span class="n">plus</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>              <i class="conum" data-value="2"></i><b>(2)</b>
+echo 5.plus(10)              <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="k">proc </span><span class="nf">plus</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span>  <i class="conum" data-value="3"></i><b>(3)</b>
-  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span></code></pre>
+proc plus(x, y: int): int =  <i class="conum" data-value="3"></i><b>(3)</b>
+  return x + y</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2849,15 +2863,15 @@ This is commonly done on the top of the file so we can easily see what our code 
 <div class="listingblock">
 <div class="title">stringutils.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">strutils</span>       <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">import strutils       <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">let</span>
-  <span class="n">a</span> <span class="o">=</span> <span class="s">"My string with whitespace."</span>
-  <span class="n">b</span> <span class="o">=</span> <span class="sc">'!'</span>
+let
+  a = "My string with whitespace."
+  b = '!'
 
-<span class="n">echo</span> <span class="n">a</span><span class="p">.</span><span class="n">split</span><span class="p">()</span>        <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">a</span><span class="p">.</span><span class="n">toUpperAscii</span><span class="p">()</span> <i class="conum" data-value="3"></i><b>(3)</b>
-<span class="n">echo</span> <span class="n">b</span><span class="p">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>      <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo a.split()        <i class="conum" data-value="2"></i><b>(2)</b>
+echo a.toUpperAscii() <i class="conum" data-value="3"></i><b>(3)</b>
+echo b.repeat(5)      <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2905,16 +2919,16 @@ To the users coming from other programming languages (especially Python), the wa
 <div class="listingblock">
 <div class="title">maths.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">math</span>                 <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">import math                 <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">let</span>
-  <span class="n">c</span> <span class="o">=</span> <span class="mf">30.0</span> <span class="c"># degrees</span>
-  <span class="n">cRadians</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">degToRad</span><span class="p">()</span>   <i class="conum" data-value="2"></i><b>(2)</b>
+let
+  c = 30.0 # degrees
+  cRadians = c.degToRad()   <i class="conum" data-value="2"></i><b>(2)</b>
 
-<span class="n">echo</span> <span class="n">cRadians</span>
-<span class="n">echo</span> <span class="n">sin</span><span class="p">(</span><span class="n">cRadians</span><span class="p">).</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <i class="conum" data-value="3"></i><b>(3)</b>
+echo cRadians
+echo sin(cRadians).round(2) <i class="conum" data-value="3"></i><b>(3)</b>
 
-<span class="n">echo</span> <span class="mi">2</span><span class="p">^</span><span class="mi">5</span>                    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
+echo 2^5                    <i class="conum" data-value="4"></i><b>(4)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2956,11 +2970,11 @@ If you create two files side by side in a folder, let&#8217;s call them <code>fi
 <div class="listingblock">
 <div class="title">firstFile.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">proc </span><span class="nf">plus</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span> <i class="conum" data-value="1"></i><b>(1)</b>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<pre class="rouge highlight"><code data-lang="nim">proc plus*(a, b: int): int = <i class="conum" data-value="1"></i><b>(1)</b>
+  return a + b
 
-<span class="k">proc </span><span class="nf">minus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="kt">int</span><span class="p">):</span> <span class="kt">int</span> <span class="o">=</span> <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span></code></pre>
+proc minus(a, b: int): int = <i class="conum" data-value="2"></i><b>(2)</b>
+  return a - b</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -2978,10 +2992,10 @@ If you create two files side by side in a folder, let&#8217;s call them <code>fi
 <div class="listingblock">
 <div class="title">secondFile.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">firstFile</span>          <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">import firstFile          <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="n">echo</span> <span class="n">plus</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>          <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">minus</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c"># error </span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+echo plus(5, 10)          <i class="conum" data-value="2"></i><b>(2)</b>
+echo minus(10, 5) # error <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3022,9 +3036,9 @@ With the following directory structure:</p>
 <div class="listingblock">
 <div class="title">secondFile.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">firstFile</span>
-<span class="k">import</span> <span class="n">mySubdir</span><span class="o">/</span><span class="n">thirdFile</span>
-<span class="k">import</span> <span class="n">myOtherSubdir</span> <span class="o">/</span> <span class="o">[</span><span class="n">fourthFile</span><span class="p">,</span> <span class="n">fifthFile</span><span class="o">]</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">import firstFile
+import mySubdir/thirdFile
+import myOtherSubdir / [fourthFile, fifthFile]</code></pre>
 </div>
 </div>
 </div>
@@ -3051,9 +3065,9 @@ The contents of that file looks like this:</p>
 <div class="listingblock">
 <div class="title">people.txt</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">Alice</span> <span class="n">A</span><span class="p">.</span>
-<span class="n">Bob</span> <span class="n">B</span><span class="p">.</span>
-<span class="n">Carol</span> <span class="n">C</span><span class="p">.</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">Alice A.
+Bob B.
+Carol C.</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3062,13 +3076,13 @@ The contents of that file looks like this:</p>
 <div class="listingblock">
 <div class="title">readFromFile.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">strutils</span>
+<pre class="rouge highlight"><code data-lang="nim">import strutils
 
-<span class="k">let</span> <span class="n">contents</span> <span class="o">=</span> <span class="n">readFile</span><span class="p">(</span><span class="s">"people.txt"</span><span class="p">)</span> <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="n">contents</span>
+let contents = readFile("people.txt") <i class="conum" data-value="1"></i><b>(1)</b>
+echo contents
 
-<span class="k">let</span> <span class="n">people</span> <span class="o">=</span> <span class="n">contents</span><span class="p">.</span><span class="n">splitLines</span><span class="p">()</span>    <i class="conum" data-value="2"></i><b>(2)</b>
-<span class="n">echo</span> <span class="n">people</span></code></pre>
+let people = contents.splitLines()    <i class="conum" data-value="2"></i><b>(2)</b>
+echo people</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3112,13 +3126,13 @@ Whitespace is simply any character that makes some space, new-lines, spaces, tab
 <div class="listingblock">
 <div class="title">readFromFile2.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">strutils</span>
+<pre class="rouge highlight"><code data-lang="nim">import strutils
 
-<span class="k">let</span> <span class="n">contents</span> <span class="o">=</span> <span class="n">readFile</span><span class="p">(</span><span class="s">"people.txt"</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span> <i class="conum" data-value="1"></i><b>(1)</b>
-<span class="n">echo</span> <span class="n">contents</span>
+let contents = readFile("people.txt").strip() <i class="conum" data-value="1"></i><b>(1)</b>
+echo contents
 
-<span class="k">let</span> <span class="n">people</span> <span class="o">=</span> <span class="n">contents</span><span class="p">.</span><span class="n">splitLines</span><span class="p">()</span>
-<span class="n">echo</span> <span class="n">people</span></code></pre>
+let people = contents.splitLines()
+echo people</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3149,10 +3163,10 @@ We need to read from <a href="https://en.wikipedia.org/wiki/Standard_streams#Sta
 <div class="listingblock">
 <div class="title">interaction1.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="n">echo</span> <span class="s">"Please enter your name:"</span>
-<span class="k">let</span> <span class="n">name</span> <span class="o">=</span> <span class="n">readLine</span><span class="p">(</span><span class="n">stdin</span><span class="p">)</span>  <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">echo "Please enter your name:"
+let name = readLine(stdin)  <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="n">echo</span> <span class="s">"Hello "</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="s">", nice to meet you!"</span></code></pre>
+echo "Hello ", name, ", nice to meet you!"</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3209,14 +3223,14 @@ If we would like to use numbers, we need to convert strings to numbers: we again
 <div class="listingblock">
 <div class="title">interaction2.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">strutils</span>
+<pre class="rouge highlight"><code data-lang="nim">import strutils
 
-<span class="n">echo</span> <span class="s">"Please enter your year of birth:"</span>
-<span class="k">let</span> <span class="n">yearOfBirth</span> <span class="o">=</span> <span class="n">readLine</span><span class="p">(</span><span class="n">stdin</span><span class="p">).</span><span class="n">parseInt</span><span class="p">()</span> <i class="conum" data-value="1"></i><b>(1)</b>
+echo "Please enter your year of birth:"
+let yearOfBirth = readLine(stdin).parseInt() <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">let</span> <span class="n">age</span> <span class="o">=</span> <span class="mi">2018</span> <span class="o">-</span> <span class="n">yearOfBirth</span>
+let age = 2018 - yearOfBirth
 
-<span class="n">echo</span> <span class="s">"You are "</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">" years old."</span></code></pre>
+echo "You are ", age, " years old."</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3243,11 +3257,11 @@ You are 84 years old.</code></pre>
 <div class="listingblock">
 <div class="title">numbers.txt</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="mf">27.3</span>
-<span class="mf">98.24</span>
-<span class="mf">11.93</span>
-<span class="mf">33.67</span>
-<span class="mf">55.01</span></code></pre>
+<pre class="rouge highlight"><code data-lang="nim">27.3
+98.24
+11.93
+33.67
+55.01</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3256,18 +3270,18 @@ You are 84 years old.</code></pre>
 <div class="listingblock">
 <div class="title">interaction3.nim</div>
 <div class="content">
-<pre class="rouge highlight"><code data-lang="nim"><span class="k">import</span> <span class="n">strutils</span><span class="p">,</span> <span class="n">sequtils</span><span class="p">,</span> <span class="n">math</span>        <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="rouge highlight"><code data-lang="nim">import strutils, sequtils, math        <i class="conum" data-value="1"></i><b>(1)</b>
 
-<span class="k">let</span>
-  <span class="n">strNums</span> <span class="o">=</span> <span class="n">readFile</span><span class="p">(</span><span class="s">"numbers.txt"</span><span class="p">).</span><span class="n">strip</span><span class="p">().</span><span class="n">splitLines</span><span class="p">()</span>  <i class="conum" data-value="2"></i><b>(2)</b>
-  <span class="n">nums</span> <span class="o">=</span> <span class="n">strNums</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">parseFloat</span><span class="p">)</span>       <i class="conum" data-value="3"></i><b>(3)</b>
+let
+  strNums = readFile("numbers.txt").strip().splitLines()  <i class="conum" data-value="2"></i><b>(2)</b>
+  nums = strNums.map(parseFloat)       <i class="conum" data-value="3"></i><b>(3)</b>
 
-<span class="k">let</span>
-  <span class="n">sumNums</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>                  <i class="conum" data-value="4"></i><b>(4)</b>
-  <span class="n">average</span> <span class="o">=</span> <span class="n">sumNums</span> <span class="o">/</span> <span class="kt">float</span><span class="p">(</span><span class="n">nums</span><span class="p">.</span><span class="n">len</span><span class="p">)</span>  <i class="conum" data-value="5"></i><b>(5)</b>
+let
+  sumNums = sum(nums)                  <i class="conum" data-value="4"></i><b>(4)</b>
+  average = sumNums / float(nums.len)  <i class="conum" data-value="5"></i><b>(5)</b>
 
-<span class="n">echo</span> <span class="n">sumNums</span>
-<span class="n">echo</span> <span class="n">average</span></code></pre>
+echo sumNums
+echo average</code></pre>
 </div>
 </div>
 <div class="colist arabic">
