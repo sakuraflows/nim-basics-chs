@@ -11,33 +11,32 @@ Nim 为三大主流操作系统提供了现成的发行版，安装 Nim 时有�
 无论选择哪种方式，只需按照对应链接中的安装说明操作，Nim 即可完成安装。我们将在后续章节中验证安装是否成功。
 
 若您使用 Linux 系统，您的发行版很可能已通过包管理器收录 Nim。
+
 若采用以上方式安装，请确保获取的是最新版本（可参照官网确认最新版本号），否则请通过上述两种方法之一进行安装。
-In this tutorial we will use the stable version.
-Originally, this tutorial was written for Nim 0.19 (released in September 2018), and it should work for any newer version, including Nim 1.x and Nim 2.x.
+
 在本教程中，我们将使用稳定版本。
 最初，本教程是为 Nim 0.19（2018 年 9 月发布）编写的，它应该适用于任何更新的版本，包括 Nim 1.x 和 Nim 2.x。
 （译者注：截止到2025-06-13，nim官网展示的安装版本是2.2.4。有消息称nim3作为实验分支正在开发中）
 
 
-== Installing additional tools
+== 安装其他工具
 
-You can write Nim code in any text editor, and then compile and run it from the terminal.
-If you want syntax highlighting and code completion there are plugins for popular code editors which provide these features.
+你可以在任何文本编辑器中编写 Nim 代码，然后通过终端进行编译和运行。如果需要语法高亮和代码补全功能，主流代码编辑器都有提供这些特性的插件。
 
-Most of Nim users prefer the https://code.visualstudio.com/[VS Code] editor, with the https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang[Nim extension] which provides syntax highlighting and code completion, and the https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] for quick compiling and running.
+大多数 Nim 用户偏好使用  https://code.visualstudio.com/[VS Code] ,搭配 https://marketplace.visualstudio.com/items?itemName=NimLang.nimlang[Nim extension] 扩展插件实现语法高亮与代码补全，并安装 https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner[Code Runner extension] 扩展以实现快速编译运行。
 
 The author personally uses https://neovim.io/[NeoVim] editor, with https://github.com/alaviss/nim.nvim[this plugin] which provides additional features like syntax highlighting and code completion.
 
-If you're using other code editors, see https://github.com/nim-lang/Nim/wiki/Editor-Support[the wiki] for available editor support.
+如果您使用的是其他代码编辑器，请参阅 https://github.com/nim-lang/Nim/wiki/Editor-Support[the wiki] 以获取可用的编辑器支持。
 
 
 
 
-== Testing the installation
+== 测试安装
 
-To check if the installation was successful, we will write a program which is traditionally used as an introductory example: https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
+为了检查安装是否成功，我们将编写一个传统上用作入门示例的程序： https://en.wikipedia.org/wiki/%22Hello,_World!%22_program[Hello World].
 
-Printing (as in: displaying on the screen; not on a paper with a printer) the phrase `Hello World!` in Nim is straightforward and it doesn't require any boilerplate code.
+在 Nim 中打印（即在屏幕上显示；而非通过打印机打印在纸上）短语` Hello World! `非常简单，且不需要任何模板代码。
 
 In a new text file called e.g. `helloworld.nim` we need to write just one line of code:
 
@@ -47,41 +46,41 @@ In a new text file called e.g. `helloworld.nim` we need to write just one line o
 include::code/helloworld.nim[]
 ----
 
-NOTE: The phrase you want to print must follow the `echo` command and must be enclosed in double-quotes (`"`).
+NOTE: 要打印的短语必须跟在 echo 命令之后，并且必须用双引号（` " `）括起来。
 
-First we need to compile our program, and then run it to see if it works as expected.
+首先我们需要编译程序，然后运行它看看是否按预期工作。
 
-Open your terminal in the same directory where your file is (on Linux you can get "Open Terminal here" if you right-click the directory in your file manager, on Windows you should use Shift + right-click to get the menu option for opening the command line).
+在文件所在的目录中打开终端（在 Linux 系统中，右键点击文件管理器中的目录，可以选择“在此处打开终端”；在 Windows 系统中，需按住 Shift 键并右键点击，才能获取打开命令行的菜单选项）。
 
-We compile our program by typing in the terminal:
+我们在终端中输入以下命令来编译程序:
 [source, terminal]
 ----
 nim c helloworld.nim
 ----
 
-After a successful compilation, we can run our program.
-On Linux we can run our program by typing `./helloworld` in the terminal, and on Windows we do it by typing `helloworld.exe`.
+编译成功后，我们就可以运行程序了。
+在Linux系统中，我们可以在终端输入`./helloworld`来运行程序，而在Windows系统上则需输入`helloworld.exe`。
 
-There is also a possibility to both compile and run the program with just one command.
-We need to type:
+还有一种可能，只需一个命令即可同时编译和运行程序。
+我们需要输入：
 [source, terminal]
 ----
 nim c -r helloworld.nim
 ----
 
-NOTE: `c` is telling Nim to compile the file, and `-r` is telling it to run it immediately. +
-To see all compiler options, type `nim --help` in your terminal.
+NOTE: `c` 告诉 Nim 编译该文件，而 `-r` 则指示它立即运行该文件。
+要查看所有编译器选项，请在终端中输入 `nim --help` 。
 
-If you're using VSCode with the Code Runner extension mentioned before, you'll just have to press `Ctrl+Alt+N` and your file will be compiled and run.
+如果你使用的是之前提到的带有 Code Runner 扩展的 VSCode，只需按下 `Ctrl+Alt+N` ，你的文件就会被编译并运行。
 
-Whichever way you chose to run your program, after a brief moment in the output window (or in your terminal) you should see:
+无论你选择哪种方式运行程序，稍等片刻后，在输出窗口（或终端）中你应该会看到：
 [source, output]
 ----
 Hello World!
 ----
 
-Congratulations, you have successfully run your first Nim program!
+恭喜，你已经成功运行了你的第一个 Nim 程序！
 
-Now you know how to print some stuff on the screen (using the `echo` command), compile your program (typing `nim c programName.nim` in your terminal), and run it (various possibilities).
+现在你已经学会了如何在屏幕上显示内容（使用 `echo` 命令）、编译程序（在终端输入 `nim c programName.nim` ）以及运行程序（有多种方式）。
 
-We can now start to explore the basic elements which will help us to write simple Nim programs.
+现在我们可以开始探索基本元素，这些元素将帮助我们编写简单的 Nim 程序。
