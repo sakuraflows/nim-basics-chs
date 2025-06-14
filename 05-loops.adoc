@@ -10,7 +10,7 @@
 * while-loop: 只要满足某些条件就会一直运行
 
 
-== 循环语句(For loop)
+== for循环(For loop)
 
 for 循环的语法是:
 
@@ -171,7 +171,7 @@ final value of a: 4
 
 
 
-== 中断（Break）与继续（continue）
+== 中断（Break）与 继续（continue）
 
 `break` 语句用于提前退出循环，通常在满足某些条件时使用。
 
@@ -215,15 +215,15 @@ include::{source-dir}/continue.nim[]
 
 == 练习
 
-1. 科拉兹猜想（https://en.wikipedia.org/wiki/Collatz_conjecture[Collatz conjecture]） 是一个规则简单却广受欢迎的数学问题。首先选择一个数字，若为奇数则乘以三加一；若为偶数则除以二。重复此过程直至结果为1。例如：5 → 奇数 → 3*5+1=16 → 偶数 → 16/2=8 → 偶数 → 4 → 2 → 1 → 终止！ +
+1. 科拉兹猜想（ https://en.wikipedia.org/wiki/Collatz_conjecture[Collatz conjecture] ） 是一个规则简单却广受欢迎的数学问题。首先选择一个数字，若为奇数则乘以三加一；若为偶数则除以二。重复此过程直至结果为1。例如：5 → 奇数 → 3*5+1=16 → 偶数 → 16/2=8 → 偶数 → 4 → 2 → 1 → 终止！ +
 选取一个整数（作为可变变量），编写循环打印科拉兹猜想的每一步骤。（提示:使用 `div` 表示除法）
 
 2. 创建一个包含你全名的不可变变量。编写一个 `for` 循环，遍历该字符串并仅打印元音字母（a、e、i、o、u）。（提示：使用 `case` 语句，每个分支包含多个值）
 
-3. https://en.wikipedia.org/wiki/Fizz_buzz[Fizz buzz] is a kids game sometimes used to test basic programming knowledge. We count numbers from one upwards. If a number is divisible by 3 replace it with _fizz_, if it is divisible by 5 replace it with _buzz_, and if a number is divisible by 15 (both 3 and 5) replace it with _fizzbuzz_. First few rounds would look like this: 1, 2, fizz, 4, buzz, fizz, 7, ... +
-Create a program which will print first 30 rounds of Fizz buzz. (Hint: beware of the order of divisibility tests)
+3. https://en.wikipedia.org/wiki/Fizz_buzz[Fizz buzz] 是一种儿童游戏，有时用于测试基础编程能力。我们从1开始向上计数。如果一个数字能被3整除，就用fizz替代；能被5整除则用buzz替代；若同时能被15（即3和5）整除，则替换为 fizzbuzz。前几轮的游戏序列如下:1,2,fizz,4,buzz,fizz, 7,…​ +
+编写一个程序，输出 Fizz buzz 游戏的前 30 轮结果。（提示：注意整除测试的顺序）
 
-4. In the previous exercises you have converted inches to centimeters, and vice versa. Create a conversion table with multiple values. For example, the table might look like this: +
+4. 在之前的练习中，你已经将英寸转换为厘米，反之亦然。创建一个包含多个值的转换表。例如，表格可能如下所示： +
 ----
 in	| cm
 ----------------

@@ -163,7 +163,7 @@ e
 {nbsp}
 
 Slicing allows us to get a series of elements with one call.
-It uses the same syntax as ranges (introduced in the <<For loop, for loop section>>).
+It uses the same syntax as ranges (introduced in the <<for循环(For loop), for循环(For loop)>>).
 
 If we use `start .. stop` syntax, both ends are included in the slice.
 Using `start ..< stop` syntax, the `stop` index is not included in the slice.
