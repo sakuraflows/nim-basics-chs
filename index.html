@@ -50,13 +50,13 @@
 <li><a href="#_字符串_strings">字符串 Strings</a>
 <ul class="sectlevel2">
 <li><a href="#_特殊字符_special_characters">特殊字符 Special characters</a></li>
-<li><a href="#_string_concatenation">String concatenation</a></li>
+<li><a href="#_字符串连接_string_concatenation">字符串连接 String concatenation</a></li>
 </ul>
 </li>
-<li><a href="#_boolean">Boolean</a>
+<li><a href="#_布尔型_boolean">布尔型 Boolean</a>
 <ul class="sectlevel2">
-<li><a href="#_relational_operators">Relational operators</a></li>
-<li><a href="#_logical_operators">Logical operators</a></li>
+<li><a href="#_关系运算符_relational_operators">关系运算符 Relational operators</a></li>
+<li><a href="#_逻辑运算符_logical_operators">逻辑运算符 Logical operators</a></li>
 </ul>
 </li>
 <li><a href="#_recap">Recap</a></li>
@@ -646,10 +646,10 @@ a mod b = 3</code></pre>
 <p>浮点数，简称 floats，是实数的一种 <a href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">近似表示</a> 。</p>
 </div>
 <div class="paragraph">
-<p>For example: <code>2.73</code>, <code>-3.14</code>, <code>5.0</code>, <code>4e7</code> are floats.
-Notice that we can use scientific notation for large floats, where the number after the <code>e</code> is the exponent.
-In this example, <code>4e7</code> is a notation representing <code>4 * 10^7</code>.
-例如： <code>2.73</code> , <code>-3.14</code> , <code>5.0</code> , <code>4e7</code> 是浮点数。注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， <code>4e7</code> 是一种表示 <code>4*10^7</code> 的记法。</p>
+<p>例如： <code>2.73</code> , <code>-3.14</code> , <code>5.0</code> , <code>4e7</code> 是浮点数。</p>
+</div>
+<div class="paragraph">
+<p>注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， <code>4e7</code> 是一种表示 <code>4*10^7</code> 的记法。</p>
 </div>
 <div class="paragraph">
 <p>我们也可以在两个浮点数之间使用四种基本数学运算。运算符 div 和 mod 未针对浮点数定义。</p>
@@ -875,10 +875,10 @@ im	ips</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Use <code>\\</code> instead of <code>\</code> to print backslashes, or</p>
+<p>使用 <code>\\</code> 而不是 <code>\</code> 来打印反斜杠，或者:</p>
 </li>
 <li>
-<p>Use raw strings which have syntax <code>r"&#8230;&#8203;"</code> (putting a letter <code>r</code> immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.</p>
+<p>使用原始字符串，其语法为 <code>r"…​"</code> （在第一个引号前紧接字母 <code>r</code> ），其中没有转义字符，也没有特殊含义：所有内容都会原样输出。</p>
 </li>
 </ul>
 </div>
@@ -895,15 +895,14 @@ some\nim\tips</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>There are more special characters than the ones listed above, and they are all found in the <a href="https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals">Nim manual</a>.</p>
+<p>除了上面列出的特殊字符外，还有更多特殊字符，它们都可以在 Nim 手册中找到. (<a href="https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals">Nim manual</a>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_string_concatenation">String concatenation</h3>
+<h3 id="_字符串连接_string_concatenation">字符串连接 String concatenation</h3>
 <div class="paragraph">
-<p>Strings in Nim are mutable, meaning their content can change.
-With the <code>add</code> function we can add (append) either another string or a char to an existing string.
-If we don&#8217;t want to change the original string, we can also concatenate (join together) strings with the <code>&amp;</code> operator, this returns a new string.</p>
+<p>Nim中的字符串是可变的，意味着它们的内容可以改变。
+通过 <code>add</code> 函数，我们可以向现有字符串添加（或追加）另一个字符串或字符。如果我们不想改变原始字符串，也可以使用 <code>&amp;</code> 运算符来连接（拼接）字符串，这会返回一个新的字符串。</p>
 </div>
 <div class="listingblock">
 <div class="title">stringConcat.nim</div>
@@ -929,19 +928,19 @@ If we don&#8217;t want to change the original string, we can also concatenate (j
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>If we plan to modify strings, they should be declared as <code>var</code>.</td>
+<td>如果我们计划修改字符串，它们应该被声明为 <code>var</code> 。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Adding another string modifies the existing string <code>p</code> in-place, changing its value.</td>
+<td>添加另一个字符串会就地修改现有字符串 <code>p</code> ，改变其值。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>We can also add a <code>char</code> to a string.</td>
+<td>我们也可以向字符串添加一个 <code>char</code> 。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Concatenating two strings produces a new string, without modifying the original strings.</td>
+<td>连接两个字符串会产生一个新的字符串，而不会修改原始字符串。</td>
 </tr>
 </table>
 </div>
@@ -958,26 +957,26 @@ q is still: xyz</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_boolean">Boolean</h2>
+<h2 id="_布尔型_boolean">布尔型 Boolean</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A boolean (or just <code>bool</code>) data type can only have two values: <code>true</code> or <code>false</code>.
-Booleans are usually used for control flow (see <a href="#_control_flow">next chapter</a>), and they are often a result of relational operators.</p>
+<p>一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： <code>true</code> 或 <code>false</code> 。布尔值通常用于控制流程（参见<a href="#_control_flow">下一章</a>），并且常常是关系运算符的运算结果。</p>
 </div>
 <div class="paragraph">
-<p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.</p>
+<p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.
+布尔变量的命名惯例是将其写成简单的 yes/no（真/假）问题形式，例如 <code>isEmpty</code> 、 <code>isFinished</code> 、 <code>isMoving</code> 等。</p>
 </div>
 <div class="sect2">
-<h3 id="_relational_operators">Relational operators</h3>
+<h3 id="_关系运算符_relational_operators">关系运算符 Relational operators</h3>
 <div class="paragraph">
-<p>Relational operators test the relation between two entities, which must be comparable.</p>
+<p>关系运算符测试两个实体之间的关系，这两个实体必须是可比较的。</p>
 </div>
 <div class="paragraph">
-<p>To compare if two values are the same, <code>==</code> (two equal signs) is used.
-Do not confuse this with <code>=</code>, which is used for assignment as we saw earlier.</p>
+<p>要比较两个值是否相同，使用 <code>==</code> （两个等号）。
+不要将其与 <code>=</code> 混淆，后者(即“=”)如我们之前所见用于赋值。</p>
 </div>
 <div class="paragraph">
-<p>Here are all the relational operators defined for integers:</p>
+<p>以下是针对整数定义的所有关系运算符:</p>
 </div>
 <div class="listingblock">
 <div class="title">relationalOperators.nim</div>
@@ -1005,7 +1004,7 @@ g is smaller or equal to h: true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We can also compare characters and strings:</p>
+<p>我们也可以比较字符和字符串：</p>
 </div>
 <div class="listingblock">
 <div class="title">relationalOperators.nim</div>
@@ -1033,19 +1032,19 @@ g is smaller or equal to h: true</code></pre>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>All uppercase letters come before lowercase letters.</td>
+<td>所有大写（译者注：应当是ASCII中的英文字符）字母都排在小写字母之前。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>String comparison works char-by-char. First three characters are the same, and character <code>b</code> is smaller than character <code>z</code>.</td>
+<td>字符串比较是按字符逐个进行的。前三个字符相同，字符 <code>b</code> 小于字符 <code>z</code> 。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>String length doesn&#8217;t matter for comparison if their characters are not identical.</td>
+<td>如果字符串的字符不完全相同，比较时长度并不重要。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Shorter string is smaller than the longer one.</td>
+<td>较短的字符串比长的字符串小。</td>
 </tr>
 </table>
 </div>
@@ -1060,14 +1059,17 @@ true</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_logical_operators">Logical operators</h3>
+<h3 id="_逻辑运算符_logical_operators">逻辑运算符 Logical operators</h3>
 <div class="paragraph">
 <p>Logical operators are used to test the truthiness of an expression consisting of one or more boolean values.</p>
+</div>
+<div class="paragraph">
+<p>逻辑运算符用于测试由一个或多个布尔值组成的表达式的真值。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Logical <code>and</code> returns <code>true</code> only if both members are <code>true</code></p>
+<p>逻辑 <code>and</code> 仅在两个成员都为 <code>true</code> 时返回 <code>true</code></p>
 </li>
 <li>
 <p>Logical <code>or</code> returns <code>true</code> if there is at least one member which is <code>true</code></p>

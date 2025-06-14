@@ -39,10 +39,10 @@ a mod b = 3
 
 浮点数，简称 floats，是实数的一种 https://en.wikipedia.org/wiki/Floating-point_arithmetic[近似表示] 。
 
-For example: `2.73`, `-3.14`, `5.0`, `4e7` are floats.
-Notice that we can use scientific notation for large floats, where the number after the `e` is the exponent.
-In this example, `4e7` is a notation representing `4 * 10^7`.
-例如： `2.73` , `-3.14` , `5.0` , `4e7` 是浮点数。注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， `4e7` 是一种表示 `4*10^7` 的记法。
+
+例如： `2.73` , `-3.14` , `5.0` , `4e7` 是浮点数。
+
+注意，对于较大的浮点数，我们可以使用科学计数法，其中 e 后面的数字是指数。在这个例子中， `4e7` 是一种表示 `4*10^7` 的记法。
 
 
 我们也可以在两个浮点数之间使用四种基本数学运算。运算符 div 和 mod 未针对浮点数定义。
@@ -190,8 +190,8 @@ im	ips
 
 如果我们想按照原样打印上面的示例，那么有两种可能选择：
 
-* Use `\\` instead of `\` to print backslashes, or
-* Use raw strings which have syntax `r"..."` (putting a letter `r` immediately before the first quote), in which there are no escape characters and no special meanings: everything is printed as it is.
+* 使用 `\\` 而不是 `\` 来打印反斜杠，或者:
+* 使用原始字符串，其语法为 `r"…​"` （在第一个引号前紧接字母 `r` ），其中没有转义字符，也没有特殊含义：所有内容都会原样输出。
 
 [source]
 ----
@@ -205,27 +205,26 @@ some\nim\tips
 some\nim\tips
 ----
 
-There are more special characters than the ones listed above, and they are all found in the https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals[Nim manual].
+除了上面列出的特殊字符外，还有更多特殊字符，它们都可以在 Nim 手册中找到. (https://nim-lang.org/docs/manual.html#lexical-analysis-string-literals[Nim manual])
 
 
 
 
 
-=== String concatenation
+=== 字符串连接 String concatenation
 
-Strings in Nim are mutable, meaning their content can change.
-With the `add` function we can add (append) either another string or a char to an existing string.
-If we don't want to change the original string, we can also concatenate (join together) strings with the `&` operator, this returns a new string.
+Nim中的字符串是可变的，意味着它们的内容可以改变。
+通过 `add` 函数，我们可以向现有字符串添加（或追加）另一个字符串或字符。如果我们不想改变原始字符串，也可以使用 `&` 运算符来连接（拼接）字符串，这会返回一个新的字符串。
 
 [source]
 .stringConcat.nim
 ----
 include::{source-dir}/stringConcat.nim[]
 ----
-<1> If we plan to modify strings, they should be declared as `var`.
-<2> Adding another string modifies the existing string `p` in-place, changing its value.
-<3> We can also add a `char` to a string.
-<4> Concatenating two strings produces a new string, without modifying the original strings.
+<1> 如果我们计划修改字符串，它们应该被声明为 `var` 。
+<2> 添加另一个字符串会就地修改现有字符串 `p` ，改变其值。
+<3> 我们也可以向字符串添加一个 `char` 。
+<4> 连接两个字符串会产生一个新的字符串，而不会修改原始字符串。
 
 [source, output]
 ----
@@ -241,23 +240,23 @@ q is still: xyz
 
 
 
-== Boolean
+== 布尔型 Boolean
 
-A boolean (or just `bool`) data type can only have two values: `true` or `false`.
-Booleans are usually used for control flow (see <<Control flow, next chapter>>), and they are often a result of relational operators.
+一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： `true` 或 `false` 。布尔值通常用于控制流程（参见<<Control flow, 下一章>>），并且常常是关系运算符的运算结果。
 
 The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
+布尔变量的命名惯例是将其写成简单的 yes/no（真/假）问题形式，例如 `isEmpty` 、 `isFinished` 、 `isMoving` 等。
 
 
 
-=== Relational operators
+=== 关系运算符 Relational operators
 
-Relational operators test the relation between two entities, which must be comparable.
+关系运算符测试两个实体之间的关系，这两个实体必须是可比较的。
 
-To compare if two values are the same, `==` (two equal signs) is used.
-Do not confuse this with `=`, which is used for assignment as we saw earlier.
+要比较两个值是否相同，使用 `==` （两个等号）。
+不要将其与 `=` 混淆，后者(即“=”)如我们之前所见用于赋值。
 
-Here are all the relational operators defined for integers:
+以下是针对整数定义的所有关系运算符:
 
 [source]
 .relationalOperators.nim
@@ -276,17 +275,17 @@ g is smaller or equal to h: true
 ----
 
 
-We can also compare characters and strings:
+我们也可以比较字符和字符串：
 
 [source]
 .relationalOperators.nim
 ----
 include::{source-dir}/relationalOperators.nim[lines=13..30]
 ----
-<1> All uppercase letters come before lowercase letters.
-<2> String comparison works char-by-char. First three characters are the same, and character `b` is smaller than character `z`.
-<3> String length doesn't matter for comparison if their characters are not identical.
-<4> Shorter string is smaller than the longer one.
+<1> 所有大写（译者注：应当是ASCII中的英文字符）字母都排在小写字母之前。
+<2> 字符串比较是按字符逐个进行的。前三个字符相同，字符 `b` 小于字符 `z` 。
+<3> 如果字符串的字符不完全相同，比较时长度并不重要。
+<4> 较短的字符串比长的字符串小。
 
 [source, output]
 ----
@@ -300,11 +299,13 @@ true
 
 
 
-=== Logical operators
+=== 逻辑运算符 Logical operators
 
 Logical operators are used to test the truthiness of an expression consisting of one or more boolean values.
 
-* Logical `and` returns `true` only if both members are `true`
+逻辑运算符用于测试由一个或多个布尔值组成的表达式的真值。
+
+* 逻辑 `and` 仅在两个成员都为 `true` 时返回 `true`
 * Logical `or` returns `true` if there is at least one member which is `true`
 * Logical `xor` returns `true` if one member is true, but the other is not
 * Logical `not` negates the truthiness of its member: changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
