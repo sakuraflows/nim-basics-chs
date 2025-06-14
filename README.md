@@ -1,7 +1,8 @@
 ## forked from narimiran/nim-basics
-项目施工中
 ## nim-basics-chs
-自用中文版nim-basics机翻文档
+项目施工中，预计将在两周内完成。
+### 介绍
+自用中文版nim-basics机翻文档。在线预览：[Nim basics 中文文档](https://sakuraflows.github.io/nim-basics-chs/)
 <br/>
 翻译模型：深度求索 DeepSeek-V3-0324
 
