@@ -59,27 +59,27 @@
 <li><a href="#_逻辑运算符_logical_operators">逻辑运算符 Logical operators</a></li>
 </ul>
 </li>
-<li><a href="#_recap">Recap</a></li>
-<li><a href="#_exercises">Exercises</a></li>
+<li><a href="#_回顾">回顾</a></li>
+<li><a href="#_练习">练习</a></li>
 </ul>
 </li>
-<li><a href="#_control_flow">Control flow</a>
+<li><a href="#_控制流_control_flow">控制流 Control flow</a>
 <ul class="sectlevel1">
-<li><a href="#_if_statement">If statement</a>
+<li><a href="#_if_语句">If 语句</a>
 <ul class="sectlevel2">
-<li><a href="#_else">Else</a></li>
+<li><a href="#_else_否则">Else (否则)</a></li>
 <li><a href="#_elif">Elif</a></li>
 </ul>
 </li>
-<li><a href="#_case">Case</a></li>
+<li><a href="#_case情况">Case（情况）</a></li>
 </ul>
 </li>
-<li><a href="#_loops">Loops</a>
+<li><a href="#_循环_loops">循环 Loops</a>
 <ul class="sectlevel1">
 <li><a href="#_for_loop">For loop</a></li>
 <li><a href="#_while_loop">While loop</a></li>
 <li><a href="#_break_and_continue">Break and continue</a></li>
-<li><a href="#_exercises_2">Exercises</a></li>
+<li><a href="#_exercises">Exercises</a></li>
 </ul>
 </li>
 <li><a href="#_containers">Containers</a>
@@ -88,7 +88,7 @@
 <li><a href="#_sequences">Sequences</a></li>
 <li><a href="#_indexing_and_slicing">Indexing and slicing</a></li>
 <li><a href="#_tuples">Tuples</a></li>
-<li><a href="#_exercises_3">Exercises</a></li>
+<li><a href="#_exercises_2">Exercises</a></li>
 </ul>
 </li>
 <li><a href="#_procedures">Procedures</a>
@@ -97,7 +97,7 @@
 <li><a href="#_calling_the_procedures">Calling the procedures</a></li>
 <li><a href="#_result_variable">Result variable</a></li>
 <li><a href="#_forward_declaration">Forward declaration</a></li>
-<li><a href="#_exercises_4">Exercises</a></li>
+<li><a href="#_exercises_3">Exercises</a></li>
 </ul>
 </li>
 <li><a href="#_modules">Modules</a>
@@ -111,7 +111,7 @@
 <li><a href="#_reading_from_a_file">Reading from a file</a></li>
 <li><a href="#_reading_user_input">Reading user input</a></li>
 <li><a href="#_dealing_with_numbers">Dealing with numbers</a></li>
-<li><a href="#_exercises_5">Exercises</a></li>
+<li><a href="#_exercises_4">Exercises</a></li>
 </ul>
 </li>
 <li><a href="#_conclusion">Conclusion</a>
@@ -960,7 +960,7 @@ q is still: xyz</code></pre>
 <h2 id="_布尔型_boolean">布尔型 Boolean</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： <code>true</code> 或 <code>false</code> 。布尔值通常用于控制流程（参见<a href="#_control_flow">下一章</a>），并且常常是关系运算符的运算结果。</p>
+<p>一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： <code>true</code> 或 <code>false</code> 。布尔值通常用于控制流程（参见<a href="#_控制流_control_flow">下一章</a>），并且常常是关系运算符的运算结果。</p>
 </div>
 <div class="paragraph">
 <p>The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. <code>isEmpty</code>, <code>isFinished</code>, <code>isMoving</code>, etc.
@@ -1072,13 +1072,13 @@ true</code></pre>
 <p>逻辑 <code>and</code> 仅在两个成员都为 <code>true</code> 时返回 <code>true</code></p>
 </li>
 <li>
-<p>Logical <code>or</code> returns <code>true</code> if there is at least one member which is <code>true</code></p>
+<p>逻辑 <code>or</code> 在至少有一个成员为 <code>true</code> 时返回 <code>true</code></p>
 </li>
 <li>
-<p>Logical <code>xor</code> returns <code>true</code> if one member is true, but the other is not</p>
+<p>逻辑 <code>xor</code> 在一个成员为真而另一个为假时返回 <code>true</code></p>
 </li>
 <li>
-<p>Logical <code>not</code> negates the truthiness of its member: changing <code>true</code> to <code>false</code>, and vice versa (it is the only logical operator that takes just one operand)</p>
+<p>逻辑运算符 <code>not</code> 会反转其操作数的真值：将 <code>true</code> 变为 <code>false</code>，反之亦然（它是唯一一个只需要一个操作数的逻辑运算符）</p>
 </li>
 </ul>
 </div>
@@ -1120,71 +1120,69 @@ not F: true</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Relational and logical operators can be combined together to form more complex expressions.</p>
+<p>关系运算符和逻辑运算符可以组合在一起形成更复杂的表达式.</p>
 </div>
 <div class="paragraph">
-<p>For example: <code>(5 &lt; 7) and (11 + 9 == 32 - 2*6)</code> will become <code>true and (20 == 20)</code>, which becomes <code>true and true</code>, and in the end this will give the final result of <code>true</code>.</p>
+<p>例如: <code>(5 &lt; 7) and (11 + 9 == 32 - 2*6)</code> 将变为 <code>true and (20 == 20)</code> ，接着变为 <code>true and true</code> ，最终得到的结果是 <code>true</code> 。</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_recap">Recap</h2>
+<h2 id="_回顾">回顾</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This was the longest chapter in this tutorial and we covered a lot of ground.
-Take your time to go through each data type and experiment with what you can do with each of them.</p>
+<p>这是本教程中最长的一章，我们涵盖了大量内容。请花时间逐一了解每种数据类型，并尝试用它们进行各种操作实验。</p>
 </div>
 <div class="paragraph">
-<p>Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you&#8217;re not doing something wrong by accident&#8201;&#8212;&#8201;this is especially beneficial in large code bases.</p>
+<p>这些类型(types)初看可能像是一种限制，但它们能让 Nim 编译器既提升代码运行速度，又确保你不会无意中犯错——这对大型代码库尤为有益。</p>
 </div>
 <div class="paragraph">
-<p>Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
-Test your knowledge by doing the following exercises.</p>
+<p>现在你已经了解了基本数据类型及其相关操作，这些知识足以在Nim中进行一些简单的计算。
+通过完成以下练习来测试你的掌握程度。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exercises">Exercises</h2>
+<h2 id="_练习">练习</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create an immutable variable containing your age (in years). Print your age in days. (1 year = 365 days)</p>
+<p>创建一个不可变变量，包含你的年龄（以年为单位）。打印你的年龄对应的天数。（1 年 = 365 天）</p>
 </li>
 <li>
-<p>Check if your age is divisible by 3. (Hint: use <code>mod</code>)</p>
+<p>检查你的年龄是否能被 3 整除。（提示：使用 <code>mod</code> ）</p>
 </li>
 <li>
-<p>Create an immutable variable containing your height in centimeters. Print your height in inches. (1 in = 2.54 cm)</p>
+<p>创建一个包含你身高（厘米）的不可变变量，并以英寸为单位打印你的身高。（1 英寸=2.54 厘米）</p>
 </li>
 <li>
-<p>A pipe has a 3/8 inch diameter. Express the diameter in centimeters.</p>
+<p>一根管子的直径为 3/8 英寸。请用厘米表示该直径。</p>
 </li>
 <li>
-<p>Create an immutable variable containing your first name, and another one containing your last name. Make a variable <code>fullName</code> by concatenating the previous two variables. Don&#8217;t forget to put a whitespace in-between. Print your full name.</p>
+<p>创建一个不可变变量存储你的名字，再创建另一个存储你的姓氏。通过拼接前两个变量生成变量 <code>fullName</code> ，注意中间要加一个空格。打印你的全名。</p>
 </li>
 <li>
-<p>Alice earns $400 every 15 days. Bob earns $3.14 per hour and works 8 hours a day, 7 days a week. After 30 days, has Alice earned more than Bob? (Hint: use relational operators)</p>
+<p>爱丽丝(Alice)每 15 天赚 400 美元。鲍勃每小时赚 3.14 美元，每天工作 8 小时，每周工作 7 天。30 天后，爱丽丝赚的钱比鲍勃多吗？（提示：使用关系运算符）</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
-<h1 id="_control_flow" class="sect0">Control flow</h1>
+<h1 id="_控制流_control_flow" class="sect0">控制流 Control flow</h1>
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>So far in our programs every line of code was executed at some point.
-Control flow statements allow us to have parts of code which will be executed only if some boolean condition is satisfied.</p>
+<p>到目前为止，在我们的程序中，每一行代码都会在某个时刻执行。控制流语句允许我们编写仅在满足某些布尔条件时才会执行的代码部分。</p>
 </div>
 <div class="paragraph">
 <p>If we think of our program as a road we can think of control flow as various branches, and we pick our path depending on some condition.
 For example, we will buy eggs only <em>if</em> their price is less than some value.
-Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</em>) we will bring sunglasses.</p>
+如果我们将程序想象成一条道路，那么控制流就像是各种分支，我们根据某些条件来选择路径。例如，只有当鸡蛋的价格低于某个值时，我们才会购买。<em>或者</em>，如果下雨了，我们会带伞，否则（else）我们会带太阳镜。</p>
 </div>
 <div class="paragraph">
-<p>Written in <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a>, these two examples would look like this:</p>
+<p>用伪代码( <a href="https://en.wikipedia.org/wiki/Pseudocode">pseudocode</a>)表示，这两个例子看起来是这样的：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1198,18 +1196,18 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 </div>
 </div>
 <div class="paragraph">
-<p>Nim syntax is very similar, as you&#8217;ll see below.</p>
+<p>Nim的语法非常相似，如下所示。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_if_statement">If statement</h2>
+<h2 id="_if_语句">If 语句</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An if statement as shown above is the simplest way to branch our program.</p>
+<p>如上所示的 if 语句是分支程序的最简单方式。</p>
 </div>
 <div class="paragraph">
-<p>The Nim syntax for writing if statement is:</p>
+<p>编写 if 语句的 Nim 语法是：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1221,16 +1219,16 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The <code>condition</code> must be of boolean type: either a boolean variable or a relational and/or logical expression.</td>
+<td>condition（即“某种情况或情形”） 必须是布尔类型：可以是布尔变量，也可以是关系和/或逻辑表达式。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>All lines following the <code>if</code> line which are indented two spaces make the same block and will be executed only if the condition is <code>true</code>.</td>
+<td>在 <code>if</code> 行之后所有缩进两个空格的代码行构成同一个代码块，只有当条件为 <code>true</code> 时才会执行。</td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>If statements can be nested, i.e. inside one if-block there can be another if statement.</p>
+<p>if 语句可以嵌套，即在一个 if 代码块内部可以包含另一个 if 语句。</p>
 </div>
 <div class="listingblock">
 <div class="title">if.nim</div>
@@ -1261,19 +1259,19 @@ Or, <em>if</em> it is raining, we will bring an umbrella, otherwise (<em>else</e
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The first condition is true, the second is false&#8201;&#8212;&#8201;inner <code>echo</code> is not executed.</td>
+<td>第一个条件为真，第二个为假——内部 <code>echo</code> 未执行。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Both conditions are true and both lines are printed.</td>
+<td>两个条件均为真，两行内容都会被打印。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>The first condition is false&#8201;&#8212;&#8201;all lines inside of its block will be skipped, nothing is printed.</td>
+<td>第一个条件为假——其代码块内的所有行都将被跳过，不会打印任何内容。</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Using the logical <code>and</code> inside of the <code>if</code> statement.</td>
+<td>在 <code>if</code> 语句中使用逻辑 <code>and</code> 。</td>
 </tr>
 </table>
 </div>
@@ -1285,9 +1283,9 @@ not only that, b is *much* smaller than c</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_else">Else</h3>
+<h3 id="_else_否则">Else (否则)</h3>
 <div class="paragraph">
-<p>Else follows after an if-block and allows us to have a branch of code which will be executed when the condition in the if statement is not true.</p>
+<p>Else 跟在 if 代码块之后，允许我们编写一段在 if 语句条件不成立时执行的代码分支。</p>
 </div>
 <div class="listingblock">
 <div class="title">else.nim</div>
@@ -1320,7 +1318,7 @@ e is a small number</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you only want to execute a block if the statement is <code>false</code>, you can simply negate the condition with the <code>not</code> operator.
+如果你只想在语句为 <code>false</code> 时执行一个代码块，可以简单地用 <code>not</code> 运算符对条件取反。
 </td>
 </tr>
 </table>
@@ -1329,11 +1327,10 @@ If you only want to execute a block if the statement is <code>false</code>, you 
 <div class="sect2">
 <h3 id="_elif">Elif</h3>
 <div class="paragraph">
-<p>Elif is short for "else if", and enables us to chain multiple if statements together.</p>
+<p>Elif 是"else if"的缩写，它使我们能够将多个 if 语句串联在一起。</p>
 </div>
 <div class="paragraph">
-<p>The program tests every statement until it finds one which is true.
-After that, all further statements are ignored.</p>
+<p>程序测试每一个语句，直到找到一个为真的语句。之后，所有后续语句都会被忽略。</p>
 </div>
 <div class="listingblock">
 <div class="title">elif.nim</div>
@@ -1372,7 +1369,7 @@ g is smaller than 1000</code></pre>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In the case of <code>g</code>, even though <code>g</code> satisfies all three conditions, only the first branch is executed, automatically skipping all the other branches.
+在 <code>g</code> 的情况下，即使 <code>g</code> 满足所有三个条件，也只会执行第一个分支，自动跳过所有其他分支。
 </td>
 </tr>
 </table>
@@ -1381,14 +1378,14 @@ In the case of <code>g</code>, even though <code>g</code> satisfies all three co
 </div>
 </div>
 <div class="sect1">
-<h2 id="_case">Case</h2>
+<h2 id="_case情况">Case（情况）</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A case statement is another way to only choose one of multiple possible paths, similar to the if statement with multiple <code>elif</code>s.
-A <code>case</code> statement, however, doesn&#8217;t take multiple boolean conditions, but rather any value with distinct states and a path for each possible value.</p>
+<p>case 语句是另一种仅选择多个可能路径之一的方式，类似于带有多个 elif 的 if 语句。
+然而， case 语句不接受多个布尔条件，而是接受具有不同状态的任何值，并为每个可能的值提供一个路径。</p>
 </div>
 <div class="paragraph">
-<p>Code written with in if-elif block looking like this:</p>
+<p>使用 if-elif 块编写的代码看起来像这样：</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1403,7 +1400,7 @@ A <code>case</code> statement, however, doesn&#8217;t take multiple boolean cond
 </div>
 </div>
 <div class="paragraph">
-<p>can be written with case statement like this:</p>
+<p>可以使用 case 语句这样写:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1419,8 +1416,7 @@ A <code>case</code> statement, however, doesn&#8217;t take multiple boolean cond
 </div>
 </div>
 <div class="paragraph">
-<p>Unlike the if statement, case statement must cover <em>all</em> possible cases.
-If one is not interested in some of those cases, <code>else: discard</code> can be used.</p>
+<p>与 if 语句不同，case 语句必须覆盖所有可能的情况。如果对某些情况不感兴趣，可以使用 <code>else: discard</code> .</p>
 </div>
 <div class="listingblock">
 <div class="title">case.nim</div>
@@ -1441,7 +1437,7 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Even though we are interested in only three values of <code>h</code>, we must include this line to cover all other possible cases (all other characters). Without it, the code would not compile.</td>
+<td>尽管我们只对 <code>h</code> 的三个值感兴趣，但必须包含这一行以涵盖所有其他可能的情况（所有其他字符）。没有它，代码将无法编译。</td>
 </tr>
 </table>
 </div>
@@ -1451,7 +1447,7 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 </div>
 </div>
 <div class="paragraph">
-<p>We can also use multiple values for each branch if the same action should happen for more than one value.</p>
+<p>如果多个值需要执行相同的操作，我们也可以为每个分支使用多个值。</p>
 </div>
 <div class="listingblock">
 <div class="title">multipleCase.nim</div>
@@ -1476,14 +1472,14 @@ If one is not interested in some of those cases, <code>else: discard</code> can 
 </div>
 </div>
 </div>
-<h1 id="_loops" class="sect0">Loops</h1>
+<h1 id="_循环_loops" class="sect0">循环 Loops</h1>
 <div class="openblock partintro">
 <div class="content">
 <div class="paragraph">
-<p>Loops are another control flow construct which allow us to run some parts of code multiple times.</p>
+<p>循环是另一种控制流结构，它允许我们多次运行某些代码部分。</p>
 </div>
 <div class="paragraph">
-<p>In this chapter we will meet two kinds of loops:</p>
+<p>在本章中，我们将介绍两种循环类型：</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1790,7 +1786,7 @@ Notice how 3 and 6 are missing from the output of the following code:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exercises_2">Exercises</h2>
+<h2 id="_exercises">Exercises</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -1830,7 +1826,7 @@ Create a program which will print first 30 rounds of Fizz buzz. (Hint: beware of
 <div class="content">
 <div class="paragraph">
 <p>Containers are data types which contain a collection of items and allow us to access those elements.
-Typically a container is also iterable, meaning that we can use them the same way we used strings in the <a href="#_loops">loops chapter</a>.</p>
+Typically a container is also iterable, meaning that we can use them the same way we used strings in the <a href="#_循环_loops">循环 Loops</a>.</p>
 </div>
 <div class="paragraph">
 <p>For example, a grocery list is a container of items we want to buy, and a list of primes is a container of numbers.
@@ -2216,7 +2212,7 @@ This can be used for accessing the elements of the tuple, instead of indexing.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exercises_3">Exercises</h2>
+<h2 id="_exercises_2">Exercises</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -2794,7 +2790,7 @@ The reason for this is that we have to declare procedures before we can call the
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exercises_4">Exercises</h2>
+<h2 id="_exercises_3">Exercises</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -3324,7 +3320,7 @@ You are 84 years old.</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_exercises_5">Exercises</h2>
+<h2 id="_exercises_4">Exercises</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">

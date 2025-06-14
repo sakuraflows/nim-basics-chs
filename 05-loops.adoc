@@ -1,10 +1,10 @@
-= Loops
+= 循环 Loops
 
 
 
-Loops are another control flow construct which allow us to run some parts of code multiple times.
+循环是另一种控制流结构，它允许我们多次运行某些代码部分。
 
-In this chapter we will meet two kinds of loops:
+在本章中，我们将介绍两种循环类型：
 
 * for-loop: run a known number of times
 * while-loop: run as long some condition is satisfied

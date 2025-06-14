@@ -242,7 +242,7 @@ q is still: xyz
 
 == 布尔型 Boolean
 
-一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： `true` 或 `false` 。布尔值通常用于控制流程（参见<<Control flow, 下一章>>），并且常常是关系运算符的运算结果。
+一个布尔型（Boolean）（或简称 bool ）数据类型只能有两个值： `true` 或 `false` 。布尔值通常用于控制流程（参见<<控制流 Control flow, 下一章>>），并且常常是关系运算符的运算结果。
 
 The usual naming convention for boolean variables is to write them as a simple yes/no (true/false) question, e.g. `isEmpty`, `isFinished`, `isMoving`, etc.
 布尔变量的命名惯例是将其写成简单的 yes/no（真/假）问题形式，例如 `isEmpty` 、 `isFinished` 、 `isMoving` 等。
@@ -306,9 +306,9 @@ Logical operators are used to test the truthiness of an expression consisting of
 逻辑运算符用于测试由一个或多个布尔值组成的表达式的真值。
 
 * 逻辑 `and` 仅在两个成员都为 `true` 时返回 `true`
-* Logical `or` returns `true` if there is at least one member which is `true`
-* Logical `xor` returns `true` if one member is true, but the other is not
-* Logical `not` negates the truthiness of its member: changing `true` to `false`, and vice versa (it is the only logical operator that takes just one operand)
+* 逻辑 `or` 在至少有一个成员为 `true` 时返回 `true`
+* 逻辑 `xor` 在一个成员为真而另一个为假时返回 `true`
+* 逻辑运算符 `not` 会反转其操作数的真值：将 `true` 变为 `false`，反之亦然（它是唯一一个只需要一个操作数的逻辑运算符）
 
 [source]
 .logicalOperators.nim
@@ -335,31 +335,30 @@ not F: true
 ----
 
 
-Relational and logical operators can be combined together to form more complex expressions.
+关系运算符和逻辑运算符可以组合在一起形成更复杂的表达式.
 
-For example: `(5 < 7) and (11 + 9 == 32 - 2*6)` will become `true and (20 == 20)`, which becomes `true and true`, and in the end this will give the final result of `true`.
-
-
-
-
-== Recap
-
-This was the longest chapter in this tutorial and we covered a lot of ground.
-Take your time to go through each data type and experiment with what you can do with each of them.
-
-Types might seem like a restriction at first, but they allow the Nim compiler to both make your code faster, and make sure you're not doing something wrong by accident -- this is especially beneficial in large code bases.
-
-Now you know the basic data types and several operations on them, which should be enough to do some simple calculations in Nim.
-Test your knowledge by doing the following exercises.
+例如: `(5 < 7) and (11 + 9 == 32 - 2*6)` 将变为 `true and (20 == 20)` ，接着变为 `true and true` ，最终得到的结果是 `true` 。
 
 
 
 
-== Exercises
+== 回顾
 
-1. Create an immutable variable containing your age (in years). Print your age in days. (1 year = 365 days)
-2. Check if your age is divisible by 3. (Hint: use `mod`)
-3. Create an immutable variable containing your height in centimeters. Print your height in inches. (1 in = 2.54 cm)
-4. A pipe has a 3/8 inch diameter. Express the diameter in centimeters.
-5. Create an immutable variable containing your first name, and another one containing your last name. Make a variable `fullName` by concatenating the previous two variables. Don't forget to put a whitespace in-between. Print your full name.
-6. Alice earns $400 every 15 days. Bob earns $3.14 per hour and works 8 hours a day, 7 days a week. After 30 days, has Alice earned more than Bob? (Hint: use relational operators)
+这是本教程中最长的一章，我们涵盖了大量内容。请花时间逐一了解每种数据类型，并尝试用它们进行各种操作实验。
+
+这些类型(types)初看可能像是一种限制，但它们能让 Nim 编译器既提升代码运行速度，又确保你不会无意中犯错——这对大型代码库尤为有益。
+
+现在你已经了解了基本数据类型及其相关操作，这些知识足以在Nim中进行一些简单的计算。
+通过完成以下练习来测试你的掌握程度。
+
+
+
+
+== 练习
+
+1. 创建一个不可变变量，包含你的年龄（以年为单位）。打印你的年龄对应的天数。（1 年 = 365 天）
+2. 检查你的年龄是否能被 3 整除。（提示：使用 `mod` ）
+3. 创建一个包含你身高（厘米）的不可变变量，并以英寸为单位打印你的身高。（1 英寸=2.54 厘米）
+4. 一根管子的直径为 3/8 英寸。请用厘米表示该直径。
+5. 创建一个不可变变量存储你的名字，再创建另一个存储你的姓氏。通过拼接前两个变量生成变量 `fullName` ，注意中间要加一个空格。打印你的全名。
+6. 爱丽丝(Alice)每 15 天赚 400 美元。鲍勃每小时赚 3.14 美元，每天工作 8 小时，每周工作 7 天。30 天后，爱丽丝赚的钱比鲍勃多吗？（提示：使用关系运算符）
