@@ -175,8 +175,7 @@ final value of a: 4
 
 `break` 语句用于提前退出循环，通常在满足某些条件时使用。
 
-In the next example, if there were no if statement with `break` in it, the loop would continue to run and print until `i` becomes 1000.
-With the `break` statement, when `i` becomes 3, we immediately exit the loop (before printing the value of `i`).在下一个示例中，如果没有包含 `break` 的 `if` 语句，循环将持续运行并打印直到 `i` 达到 `1000` 。而通过 `break` 语句，当 `i` 变为 `3` 时，我们会立即退出循环（此时尚未打印 `i` 的值）。
+在下面的示例中，如果没有包含 `break` 的 `if` 语句，循环将持续运行并打印直到 `i` 达到 `1000` 。而通过 `break` 语句，当 `i` 变为 `3` 时，我们会立即退出循环（此时尚未打印 `i` 的值）。
 
 [source]
 .break.nim
