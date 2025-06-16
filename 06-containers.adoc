@@ -1,12 +1,10 @@
-= Containers
+= 容器 Containers
 
 
 
-Containers are data types which contain a collection of items and allow us to access those elements.
-Typically a container is also iterable, meaning that we can use them the same way we used strings in the <<循环 Loops, 循环 Loops>>.
+容器是一种数据类型，它包含一组元素并允许我们访问这些元素。通常容器也是可迭代的，这意味着我们可以像在<<循环 Loops, 循环 Loops>>中使用字符串那样使用它们。
 
-For example, a grocery list is a container of items we want to buy, and a list of primes is a container of numbers.
-Written in pseudocode:
+例如，购物清单是我们想购买的物品的容器，而质数列表则是数字的容器。用伪代码表示：
 [source]
 ----
 groceryList = [ham, eggs, bread, apples]
@@ -15,18 +13,13 @@ primes = [1, 2, 3, 5, 7]
 
 
 
-== Arrays
+== 数组 Arrays
 
-An array is the simplest container type.
-Arrays are homogeneous, i.e. all elements in an array must have the same type.
-Arrays are also of a constant size, meaning that the amount of elements (or rather: the amount of _possible_ elements), must be known at compile-time.
-This means that we call arrays a "homogeneous container of a constant length".
+数组是最简单的容器类型。数组是同质的，即数组中的所有元素必须具有相同的类型。数组的大小也是固定的，意味着元素的数量（或者更准确地说：可能的元素数量）必须在编译时已知。这意味着我们称数组为“固定长度的同质容器”。
 
-The array type is declared using `array[<length>, <type>]`, where `length` is the total capacity of the array (number of elements it can fit), and `type` is a type of all its elements.
-The declaration can be omitted if both length and type can be inferred from the passed elements.
+数组类型使用 `array[<length>, <type>]` 声明，其中 `length` 是数组的总容量（可容纳的元素数量）， `type` 是其所有元素的类型。如果长度和类型可以从传递的元素中推断出来，则可以省略声明。
 
-The elements of an array are enclosed inside of square brackets.
-
+数组的元素被包含在方括号内。
 [source]
 ----
 var
@@ -35,12 +28,12 @@ var
   c = []  # error      <2>
   d: array[7, string]  <3>
 ----
-<1> If we provide the values, the length and type of array `b` are known at compile time. Although correct, there is no need to specifically declare it like array `a`.
-<2> Neither the length nor the type of the elements can be inferred from this kind of declaration -- this produces an error.
-<3> The correct way to declare an empty array (which will be filled later) is to give its length and type, without providing the values of its elements -- array `d` can contain seven strings.
+<1> 如果我们提供了值，数组 `b` 的长度和类型在编译时就是已知的。虽然正确，但无需像数组 `a` 那样特别声明。
+<2> 这种声明方式既无法推断元素的长度，也无法推断其类型——这会导致错误。
+<3> 正确声明空数组（稍后将填充）的方法是给出其长度和类型，而不提供元素值——数组 `d` 可以包含七个字符串。
 
 
-Since the length of an array has to be known at compile-time, this will not work:
+由于数组的长度必须在编译时已知，因此以下代码将无法工作：
 
 [source]
 ----
@@ -50,18 +43,17 @@ let n = 5
 var a: array[m, char]
 var b: array[n, char] # error <1>
 ----
-<1> This produces an error because `n` is declared using `let` -- its value is not known at compile time. We can only use values declared with `const` as a `length` parameter for an array initialization.
+<1> 这会产生错误，因为 `n` 是用 `let` 声明的——它的值在编译时是未知的。我们只能使用用 `const` 声明的值作为数组初始化的 `length` 参数。
 
 
 
 
 
-== Sequences
+== 序列 Sequences
 
-Sequences are containers similar to arrays, but their length doesn't have to be known at compile time, and it can change during runtime: we declare only the type of the contained elements with `seq[<type>]`.
-Sequences are also homogeneous, i.e. every element in a sequence has to be the same type.
+序列（Sequences）是一种类似于数组的容器，但其长度无需在编译时已知，且可在运行时动态变化：我们仅需通过 `seq[<type>]` 声明所包含元素的类型。序列也是同质的（homogeneous），即序列中的每个元素必须具有相同的类型。
 
-The elements of a sequence are enclosed between `@[` and `]`.
+序列的元素被包含在 `@[` 和 `]` 之间。
 
 [source]
 ----
@@ -69,30 +61,29 @@ var
   e1: seq[int] = @[]   <1>
   f = @["abc", "def"]  <2>
 ----
-<1> The type of an empty sequence must be declared.
-<2> The type of a non-empty sequence can be inferred. In this case, it is a sequence containing strings.
+<1> 空序列的类型必须被声明。
+<2> 非空序列的类型可以被推断出来。在这个例子中，它是一个包含字符串的序列。
 
-Another way to initialize an empty sequence is to call the `newSeq` procedure. We'll look more at procedure calls in the <<Procedures, next chapter>> but for now just know that this is also a possibility:
+另一种初始化空序列的方法是调用 `newSeq` 过程。我们将在<<过程 Procedures, 下一章节>>更详细地介绍过程调用，但现在只需知道这也是一种可行方式：
 
 [source]
 ----
 var
   e = newSeq[int]() <1>
 ----
-<1> Providing the type parameter inside of square brackets allows the procedure to know that it shall return a sequence of a certain type. +
-A frequent error is omission of the final `()`, which must be included.
+<1> 在方括号内提供类型参数可以让过程知道它应该返回某种特定类型的序列。 +
+一个常见的错误是遗漏了在末尾的 `()` ，这是必需的。
 
 
-We can add new elements to a sequence with the `add` function, similar to how we did with strings.
-For this to work the sequence must be mutable (defined with `var`), and the element we're adding must be of the same type as the elements in the sequence.
+我们可以使用 `add` 函数向序列中添加新元素，这与处理字符串的方式类似。为此，序列必须是可变的（用 `var` 定义），并且我们添加的元素必须与序列中的元素类型相同。
 
 [source]
 .seq.nim
 ----
 include::{source-dir}/seq.nim[]
 ----
-<1> Adding a new element of the same type (char).
-<2> Adding another sequence containing the same type.
+<1> 添加一个相同类型（char）的新元素。
+<2> 添加另一个包含相同类型的序列。
 
 [source, output]
 ----
@@ -100,7 +91,7 @@ include::{source-dir}/seq.nim[]
 @['1', '2', '3', 'x', 'y', 'z']
 ----
 
-Trying to pass different types to the existing sequences will produce an error:
+尝试将不同类型传递给现有序列会产生错误：
 
 [source]
 ----
@@ -109,11 +100,11 @@ var i = @[9, 8, 7]
 i.add(9.81) # error <1>
 g.add(i)    # error <2>
 ----
-<1> Trying to add a `float` to a sequence of `int`.
-<2> Trying to add a sequence of `int` to a sequence of `char`.
+<1> 尝试将 `float` 添加到 `int` 的序列中。
+<2> 尝试将序列 `int` 添加到序列 `char` 中
 
 
-Since sequences can vary in length we need a way to get their length, for this we can use the `len` function.
+由于序列长度可变，我们需要一种获取其长度的方法，为此可以使用 `len` 函数。
 
 [source]
 ----
@@ -134,25 +125,24 @@ echo i.len
 
 
 
-== Indexing and slicing
+== 索引 Indexing 与 切片 slicing
 
-Indexing allows us to get a specific element from a container by its index.
-Think of the index as a position inside of the container.
+索引允许我们通过下标从容器中获取特定元素。
+可以将索引视为容器内部的位置标识。
 
-Nim, like many other programming languages, has zero-based indexing, meaning that the first element in a container has the index zero, the second element has the index one, etc.
+Nim与许多编程语言一样采用零基索引，即容器中第一个元素的索引为零，第二个元素的索引为一，以此类推。
 
-If we want to index "from the back", it is done by using the `^` prefix.
-The last element (first from the back) has index `^1`.
+若要从后向前索引，需使用 `^` 前缀。最后一个元素（即倒数第一个）的索引是 `^1` 。
 
-The syntax for indexing is `<container>[<index>]`.
+索引的语法是 `<container>[<index>]` 。
 
 [source]
 .indexing.nim
 ----
 include::{source-dir}/indexing.nim[lines=1..4]
 ----
-<1> Zero-based indexing: the element at index 1 is `b`.
-<2> Getting the last element.
+<1> 零基索引：索引 `1` 对应的元素是 `b` 。
+<2> 获取最后一个元素。
 
 [source, output]
 ----
@@ -162,8 +152,8 @@ e
 
 {nbsp}
 
-Slicing allows us to get a series of elements with one call.
-It uses the same syntax as ranges (introduced in the <<for循环(For loop), for循环(For loop)>>).
+切片操作允许我们通过一次调用获取一系列元素。它使用的语法与范围（在 <<for循环(For loop), for循环(For loop)>> 中介绍过）相同。
+
 
 If we use `start .. stop` syntax, both ends are included in the slice.
 Using `start ..< stop` syntax, the `stop` index is not included in the slice.
