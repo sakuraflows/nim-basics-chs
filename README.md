@@ -1,6 +1,6 @@
 ## forked from narimiran/nim-basics
 ## nim-basics-chs
-项目施工中，预计将在两周内完成。
+
 ### 介绍
 自用中文版nim-basics机翻文档。在线预览：[Nim basics 中文文档](https://sakuraflows.github.io/nim-basics-chs/)
 <br/>
@@ -41,7 +41,7 @@ Nim是一门正在快速迭代的新兴程序语言，因此本文档中的内�
 本文档的所有内容均为机翻，如您有勘误及补充，欢迎在 issues 提出！
 
 ##### 关于epub view
-推荐使用calibre浏览及阅读文档构建生成的pdf文件，使用其它软件阅读可能导致乱码。本项目也将在结束施工后提供pdf文件。
+推荐使用calibre浏览及阅读文档构建生成的pdf文件，使用其它软件阅读可能导致乱码。
 
 <br/>
 
