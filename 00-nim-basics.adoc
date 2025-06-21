@@ -12,6 +12,8 @@
 :linkcss:
 :doctype: book
 :toc: left
+:description: 本教程旨在向你介绍编程基础及Nim语法，以便你能更轻松地跟进其他教程和/或自行深入探索。Nim是一门相对较新的编程语言，它能让开发者编写出既易读又高性能的代码。
+:keywords: nim, nim-basics, Nim basics中文文档
 
 
 

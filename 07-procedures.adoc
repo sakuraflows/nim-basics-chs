@@ -2,53 +2,46 @@
 
 
 
-Procedures, or _functions_ as they are called in some other programming languages, are parts of code that perform a specific task, packaged as a unit.
-The benefit of grouping code together like this is that we can _call_ these procedures instead of writing all the code over again when we wish to use the procedure's code.
+过程（在其他编程语言中常称为函数）是将执行特定任务的代码封装为一个独立单元。
+这种代码组织方式的优势在于，我们可以直接调用这些过程，而无需在每次需要时重复编写相同的代码。
 
-In some of the previous chapters we've looked at the Collatz conjecture in various different scenarios.
-By wrapping up the Collatz conjecture logic into a procedure we could have called the same code for all the exercises.
+在前面的某些章节中，我们探讨了不同场景下的考拉兹猜想。通过将考拉兹猜想逻辑封装成过程，我们就能在所有练习中调用相同的代码。
 
-So far we have used many built-in procedures, such as `echo` for printing, `add` for adding elements to a sequence, `inc` to increase the value of an integer, `len` to get the length of a container, etc.
-Now we'll see how to create and use our own procedures.
+到目前为止，我们已经使用了许多内置过程，例如用于打印的 `echo` 、向序列添加元素的 `add` 、增加整数值的 `inc` 、获取容器长度的 `len` 等。现在我们将学习如何创建和使用自己的过程。
 
-Some of the advantages of using procedures are:
+使用过程（procedure）的一些优势包括：
 
-* Reducing code duplication
-* Easier to read code as we can name pieces by what they do
-* Decomposing a complex task into simpler steps
+* 减少代码重复
+* 通过为代码片段赋予功能描述性名称，使代码更易阅读
+* 将复杂任务分解为更简单的步骤
 
-As mentioned in the beginning of this section, procedures are often called functions in other languages.
-This is actually a bit of a misnomer if we consider the mathematical definition of a function.
-Mathematical functions take a set of arguments (like `f(x, y)`, where `f` is a function, and `x` and `y` are its arguments) and _always_ return the same answer for the same input.
+正如本节开头所述，在其他语言中过程(procedure)常被称为函数(function)。若从数学函数的定义来看，这其实是个不太准确的称谓。数学函数接收一组参数（如 `f(x, y)` ，其中 `f` 是函数， `x` 和 `y` 是其参数），对于相同的输入总是返回相同的结果。
 
-Programmatic procedures on the other hand don't always return the same output for a given input.
-Sometimes they don't return anything at all.
-This is because our computer programs can store state in the variables we mentioned earlier which procedures can read and change.
-In Nim, the word `func` is currently reserved to be used as the more mathematically correct kind of function, forcing no side-effects.
+另一方面，程序化过程对于给定输入并不总是返回相同输出。有时它们根本不返回任何内容。这是因为我们的计算机程序可以在之前提到的变量中存储状态，这些过程可以读取和更改状态。在Nim中，当前保留使用 `func` 这个词来表示数学上更准确的函数类型，强制要求无副作用。
 
 
 
 
-== Declaring a procedure
+== 声明过程 Declaring a procedure
 
-Before we can use (call) our procedure, we need to create it and define what it does.
+在使用（调用）过程之前，我们需要创建它并定义其功能。
 
-A procedure is declared by using the `proc` keyword and the procedure name, followed by the input parameters and their type inside of parentheses, and the last part is a colon and the type of the value returned from a procedure, like this:
+过程通过使用 proc 关键字和过程名称来声明，后跟括号内的输入参数及其类型，最后部分是一个冒号和过程返回值的类型，如下所示：
 
 [source]
 ----
 proc <name>(<p1>: <type1>, <p2>: <type2>, ...): <returnType>
 ----
 
-The body of a procedure is written in the indented block following the declaration appended with a `=` sign.
+过程体以缩进块的形式编写，紧跟在带有 `=` 符号的声明之后。
 
 [source]
 .callProcs.nim
 ----
 include::{source-dir}/callProcs.nim[lines=1..8]
 ----
-<1> Declaring procedure called `findMax`, which has two parameters, `x` and `y`, and it returns an `int` type.
-<2> To return a value from a procedure, we use the `return` keyword.
+<1> 声明名为 `findMax` 的过程，它有两个参数 `x` 和 `y` ，并返回一个 `int` 类型。
+<2> 要从过程中返回值，我们使用 `return` 关键字。
 
 
 {nbsp}
@@ -62,13 +55,12 @@ proc echoLanguageRating(language: string) = <1>
   else:
     echo language, " might be a second-best language."
 ----
-<1> The `echoLanguageRating` procedure just echoes the given name, it doesn't return anything, so the return type is not declared.
+<1> `echoLanguageRating` 过程只是回显给定的名称，它不返回任何内容，因此没有声明返回类型。
 
 
 {nbsp}
 
-Normally we're not allowed to change any of the parameters we are given.
-Doing something like this will throw an error:
+通常情况下，我们不允许修改传入的任何参数。类似这样的操作会引发错误：
 
 [source]
 ----
@@ -79,7 +71,7 @@ var ourVariable = 10
 changeArgument(ourVariable)
 ----
 
-In order for this to work we need to allow Nim, and the programmer using our procedure, to change the argument by declaring it as a variable:
+为了让这能够正常工作，我们需要允许Nim以及使用我们过程的程序员通过将参数声明为变量来修改它：
 
 [source]
 ----
@@ -92,7 +84,7 @@ echo ourVariable
 changeArgument(ourVariable)
 echo ourVariable
 ----
-<1> Notice how `argument` is now declared as a `var int` and not just as an `int`.
+<1> 注意 `argument` 现在被声明为 `var int` ，而不仅仅是 `int` 。
 
 [source, output]
 ----
@@ -100,9 +92,9 @@ echo ourVariable
 20
 ----
 
-This of course means that the name we pass it must be declared as a variable as well, passing in something assigned with `const` or `let` will throw an error.
+这当然意味着我们传入的名称也必须声明为变量，传入用 `const` 或 `let` 赋值的内容会引发错误。
 
-While it is good practice to pass things as arguments it is also possible to use names declared outside the procedure, both variables and constants:
+虽然将内容作为参数传递是良好的实践，但也可以使用过程外部声明的名称，包括变量和常量：
 
 [source]
 ----
@@ -115,8 +107,8 @@ proc echoX() =
 echoX()
 echoX()
 ----
-<1> Here we access the outside variable `x`.
-<2> We can also update its value, since it's declared as a variable.
+<1> 这里我们访问外部变量 `x` 。
+<2> 我们可以更新它的值，因为它被声明为变量。
 [source, output]
 ----
 100
@@ -124,19 +116,18 @@ echoX()
 ----
 
 
-== Calling the procedures
+== 调用程序 Calling the procedures
 
-After we have declared a procedure, we can call it.
-The usual way of calling procedures/functions in many programming languages is to state its name and provide the arguments in the parentheses, like this:
+声明过程后，我们可以调用它。在许多编程语言中，调用过程/函数的常规方式是声明其名称并在括号内提供参数，如下所示：
 
 [source]
 ----
 <procName>(<arg1>, <arg2>, ...)
 ----
 
-The result from calling a procedure can be stored in a variable.
+调用过程的结果可以存储在变量中。
 
-If we want to call our `findMax` procedure from the above example, and save the return value in a variable we can do that with:
+如果要从上面的示例中调用我们的 findMax 过程，并将返回值保存在变量中，我们可以这样做：
 
 [source]
 .callProcs.nim
